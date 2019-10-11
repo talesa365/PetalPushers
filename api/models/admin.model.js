@@ -9,7 +9,7 @@ module.exports = (sequelize, type) => sequelize.define('employee', {
         type: type.STRING,
         allowNull: false
       },
-    password: {
+    employee_password: {
       type: type.STRING,
       allowNull: false,
     },

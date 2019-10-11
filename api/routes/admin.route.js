@@ -1,21 +1,19 @@
-const express = require('express');
-const adminRoute = express.Router();
-// Require logIn model in our routes module
-let admin = require('./admin.model');
+const admin= require('../sequelize')
+module.exports = (app) => {
 
 
 
 
-  let employId = new EmployId({employee_Id:"997226", password:"petals"})
+  let adminId = new AdminId({employee_Id:"997226", password:"petals"})
   employId.save();
 
 
 
-adminRoute.route('/').post(function (req, res) {
+app.get('/logIn',  (req, res)=> {
     console.log(req.body);
     
-    employId.findOne({employee_ID: req.body.employId}, function(err, user){
-        if(!employId){
+    adminId.findOne({employee_ID: req.body.employee_Id}, function(err, user){
+        if(!adminId){
             var obj = {
                 err: "Error, ID Not Found"
             }
@@ -24,7 +22,7 @@ adminRoute.route('/').post(function (req, res) {
             
             res.send(obj)
         }else{
-            if(employId.password != req.body.password){
+            if(employee_Id.password != req.body.password){
                 let err = {
                     message: "Your employee ID or password doesn't match a known user"
                 }
@@ -34,7 +32,7 @@ adminRoute.route('/').post(function (req, res) {
                 res.send(err)
             }else{
                 var payload = {
-                    employee_Id: employId._id,
+                    employee_Id: employee_Id._id,
                     auth: true
                 }
                 payload = JSON.stringify(payload)
@@ -43,8 +41,7 @@ adminRoute.route('/').post(function (req, res) {
             }
         }
     })
-  });
+  })
+};
 
 
-
-module.exports = adminRoute

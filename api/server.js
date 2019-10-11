@@ -17,15 +17,15 @@ require('./routes/purchasingOrder.route')
 
 
 // serving static files ---------->
-const publicRoot = path.join(__dirname,'../', 'client');
+const publicRoot = path.join(__dirname,'../','client');
 app.use(express.static(publicRoot));
+app.get('/admin', (req,res) => {
+    res.sendFile(publicRoot +'/admin.html')
+});
 app.get("/", (req, res) => {
     res.sendFile(publicRoot + '/index.html')
-} );
-app.get('/admin', (req,res) => {
-    res.sendFile(publicRoot + '/admin.html')
 });
-app.get('/admin', (req,res) => {
+app.get('/purchasinOrder', (req,res) => {
     res.sendFile(publicRoot + '/purchasingOrder.html')
 });
 app.get('/*', (req, res) => {

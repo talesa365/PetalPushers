@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Petal Pushers - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Petal Pushers - Basket</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
+    <!-- <link rel="stylesheet" href="css/aos.css"> -->
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <!-- <link rel="stylesheet" href="css/jquery.timepicker.css"> -->
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -80,16 +80,16 @@
                 <p>Choose the flowers you want, choose a color if available, and choose the number of each for your bouquet.</p>
                 
                 <form method="get" class="basket_add">
-                    <input type="hidden" name="unitprice" value="60.00" />
-                    <input type="hidden" name="shipping" value="0" />
+                    <input type="hidden" name="unitprice" value="29.99" />
+                    <input type="hidden" name="shipping" value="free" />
                     <input type="hidden" name="category" value="bouquet" />
-                    <input type="hidden" name="itemname" value="Bouquet" />
+                  
           
                     <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies">
                       <legend class="hidden">Calla Lilies</legend>
                       <div class="qty">
-                        <label class="hidden" for="qtyCL">Qty</label>
-                        <input type="number" value="0" name="qtyCL" id="qtyCL" class="text spinner" />
+                        <label class="hidden" for="qty">Qty</label>
+                        <input type="number" value="" name="qty" id="callaLilly" class="text spinner" />
                       </div>
                       <div class="color">
                         <label for="colorCL">Color</label>
@@ -108,7 +108,7 @@
                       <legend class="hidden">Gerbera Daisies</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyGD">Qty</label>
-                        <input type="number" value="0" name="qtyGD" id="qtyGD" class="text spinner" />
+                        <input type="number" value="" name="qty" id="gerberaDaisies" class="text spinner" />
                       </div>
                       <div class="color">
                         <label for="colorGD">Color</label>
@@ -127,7 +127,7 @@
                       <legend class="hidden">Roses</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyR">Qty</label>
-                        <input type="number" value="0" name="qtyR" id="qtyR" class="text spinner" />
+                        <input type="number" value="" name="qtyR" id="roses" class="text spinner" />
                       </div>
                       <div class="color">
                         <label for="colorR">Color</label>
@@ -146,8 +146,8 @@
                     <fieldset class="bab_item" id="bab-L" data-legend="Lilies">
                       <legend class="hidden">Lilies</legend>
                       <div class="qty">
-                        <label class="hidden" for="qtyL">Qty</label>
-                        <input type="number" value="0" name="qtyL" id="qtyL" class="text spinner" />
+                        <label class="hidden" for="qty">Qty</label>
+                        <input type="number" value="" name="qty" id="lillies" class="text spinner" />
                       </div>
                       <div class="color">
                         <label for="colorL">Color</label>
@@ -167,7 +167,7 @@
                       <legend class="hidden">Tulips</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyT">Qty</label>
-                        <input type="number" value="0" name="qtyT" id="qtyT" class="text spinner" />
+                        <input type="number" value="" name="qty" id="tulips" class="text spinner" />
                       </div>
                       <div class="color">
                         <label for="colorT">Color</label>
@@ -187,12 +187,12 @@
                     <h3>Select a Vase:</h3><br>
                     <div class="rc">
                       <ul>
-                        <li><input type="radio" name="vasetype" id="vase-type-round" value="round" checked /> <label for="vase-type-round">Round
+                        <li><input type="radio" name="vasetype" id="vase-type-round" value="round"  /> <label for="vase-type-round">Round
                              glass</label></li>
                         <li><input type="radio" name="vasetype" id="vase-type-square" value="square" /> <label for="vase-type-square">Square
                             glass</label></li>
                       </ul>
-                    </div><!--.rc-->  
+                    </div>  
                   </form>
             </div>
           </div>  
@@ -217,14 +217,14 @@
                 <h3>Select a Pot:</h3><br>
                 <div class="rc">
                   <ul>
-                    <li><input class="mr-2"type="radio" value="decorative"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Decorative
+                    <li><input class="mr-2"type="radio" value="decorative-$54.00"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Decorative
                       </label></li>
   
-                    <li><input type="radio" name="pottype" id="glazed" value="glazed"  />
+                    <li><input type="radio" name="pottype" id="glazed" value="glazed-$14.95"  />
                       <label for="pot-type-glazed">Glazed
                         Ceramic</label></li>
   
-                    <li><input type="radio" name="pottype" id="glass" value="glass"  /> <label
+                    <li><input type="radio" name="pottype" id="glass" value="glass-25.95"  /> <label
                        for="pot-type-glazed">Glass
                         Vase</label></li>
                   </ul>
@@ -234,7 +234,7 @@
                 <div class="col">
                   <div class="f_row">
                     <label for="qty" class="auto">Quantity:</label>
-                    <input type="number" class="text small align_centre" name="qty" id="qty" value="0" />
+                    <input type="number" class="text small align_centre" name="qty" id="qty" value="" />
                   </div>
                 </div>
               </div>
@@ -287,14 +287,14 @@
 							<h3>Select a Pot:</h3><br>
 							<div class="rc">
 								<ul>
-									<li><input class="mr-2"type="radio" value="clay"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Natural Clay
+									<li><input class="mr-2"type="radio" value="clay-$19.95"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Natural Clay
 										</label></li>
 
-									<li><input type="radio" name="pottype" id="pot-type-glazed" value="glazed"  />
+									<li><input type="radio" name="pottype" id="pot-type-glazed" value="glazed-$19.95"  />
 										<label for="pot-type-glazed">Glazed
 											Ceramic</label></li>
 
-									<li><input type="radio" name="pottype" id="pot-type-glass" value="glass"  /> <label
+									<li><input type="radio" name="pottype" id="pot-type-glass" value="glass-$19.95"  /> <label
 										 for="pot-type-glazed">Other</label></li>
 								</ul>
 							</div><!--end radio buttons-->
@@ -302,7 +302,7 @@
 							<div class="col">
 								<div class="f_row">
 									<label for="qty" class="auto">Quantity:</label>
-									<input type="number" class="text small align_centre" name="qty" id="qty" value="0" />
+									<input type="number" class="text small align_centre" name="qty" id="qty" value="" />
 								</div>
 						  </div>
             </div>
@@ -319,6 +319,10 @@
                   dry.</p>
               </div>
           </div>  
+        </div>
+
+        <div class="col">
+            <input type="submit" class="checkout float_right m-5" value="Process Order" onclick="orderIt(event)" />
         </div>
         <div id="totals"></div>
  <!-- Payment Form------------------------------------------- -->
@@ -389,7 +393,22 @@
             </div>
           </form><!-- END -->
 
-
+          <div class="block-22">
+              <div class="container">
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-md-7 text-center">
+                    <h2 class="heading mb-4">Be Sure To Get Your Discount</h2>
+                    <form action="#" class="subscribe">
+                      <div class="form-group">
+                        <input type="text" class="form-control email" placeholder="Enter your promo code">
+                        <!-- <input type="submit" class="btn btn-primary submit"> -->
+                        <button type="submit" id="promo" class="btn btn-primary submit">Promo Code</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           <div class="row mt-5 ml-3 pt-3 d-flex">
             <div class="col-md-6 d-flex">  
@@ -417,20 +436,12 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-md-12">
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div> <!-- .col-md-8 -->
-
-
-
-<!---------------------FETCH---------------------------------------------->
               <div class="col">
-                  <input type="submit" class="checkout float_right m-5" value="Submit Payment & Order" onclick="submitOrder(event)" />
+                  <input type="submit" class="checkout float_right m-5" value="Submit Payment" onclick="PayForIt(event)" />
               </div>
          </form>
               </div>
@@ -447,7 +458,7 @@
         <div class="col-md-6 col-lg-6">
           <h3 class="heading-section">About Us</h3>
           <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt.</p>
-          <p><a href="#" class="btn btn-primary px-4">Button</a></p>
+          <p><a href="#" class="btn btn-primary px-4">Top</a></p>
         </div>
 
         <div class="col-md-6 col-lg-6">
@@ -467,9 +478,9 @@
       <div class="row pt-5">
         <div class="col-md-12 text-left">
           <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>
       </div>
@@ -482,15 +493,14 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="js/popper.min.js"></script> -->
+  <!-- <script src="js/bootstrap.min.js"></script> -->
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
-  
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/main.js"></script>

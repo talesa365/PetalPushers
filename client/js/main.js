@@ -275,32 +275,89 @@ function flash(t) {
 	setTimeout("flash ()",t);
   }
 
+//==============================================================================
+// ADMINISTRATION FETCH
+// ============================================================================
 
-// order fetch----------------------------------------------
+function checkId(e){
+	e.preventDefault()
+	let employee_id = document.getElementById("employee_id");
+	let employee_password = document.getElementById("employee_password");
 
-function submitOrder(e) {
-	e.preventDefault();
-	let obj = makeObjectFromHTML();
-	fetch('http://localhost:7000/', {
-	  headers: {
-		'content-type':
-		'application/json'
-	  },
-	  method:'POST',
-	  body: JSON.stringify(obj)
-	}).then((res) => {
-	  console.log(res);
-	});
-  };
+	let payload = {
+		employee_id: employee_id,
+		employee_password:employee_id
+	}
+
+	payload = JSON.stringify(payload)
+	console.log(payload);
+
+	fetch('http://localhost:7000/admin/logIn', {
+		method: 'POST',
+		mode: "cors",
+		headers: {
+			"content-type": "application/json",
+			payload: payload
+		},
+		body:payload
+	})
+	.then((res)=>
+		res.json()
+	).then((res) =>
+		console.log(res)
+
+		)
+}
+//==============================================================================
+// ORDER FETCH
+// ============================================================================
+
   
-  function makeObjectFromHTML() {
-	let val = document.getElementsByTagName("input");
-	  for (let i = 0; i < val.length; i++) {
-		console.log(val[i]);
-		
-	  }
-	let obj = {};
-	obj[val.id] = val.nodeValue;
-	return obj
-  }
+function orderIt(e){
+    e.preventDefault();
+    let payload = makePayloadFromHTML();
+   
+	fetch('http://localhost:7000/order/', {
+		method: 'POST',
+		mode: "cors",
+		headers: {
+			"content-type": "application/json",
+			payload: payload
+		},
+		body:payload
+	})
+	.then((res)=>
+		res.json()
+	).then((res) =>
+		console.log(res)
+
+		)
+}
+
+function makePayloadFromHTML(){
+    let items= document.getElementsByTagName("input");
+    let payload = {};
+    for (let val of items) {
+        if(val.type === "radio"){
+            payload[val.name] = val.checked
+        }else{
+            payload[val.name] = val.value
+        }
+        console.log(payload)
+       
+        console.log("nice selection");
+
+    }
+    return payload
+}
+
   
+
+
+  //============================================================================
+// PAYMENT FETCH
+// ============================================================================
+
+function payForIt(e){
+	e.preventDefault()
+}

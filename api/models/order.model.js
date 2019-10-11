@@ -1,45 +1,19 @@
-module.exports = (sequelize, type) => sequelize.define('user', {
+module.exports = (sequelize, type) => sequelize.define('order', {
     id: {
       type: type.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    first_name:{
+    bouquet:{
       type:type.STRING,
       
     }, 
-    last_name:{
+    gift_arrangement:{
       type: type.STRING,
-      allowNull: false
+   
     },
-    address: {
-      type: type.STRING,
-      allowNull: false,
-    },
-    apart: {
-      type: type.STRING,
-     
-    },
-    city: {
-      type: type.STRING,
-  
-    },
-    state: {
-      type: type.STRING,
-  
-    },
-    zip_code: {
-      type: type.STRING,
-  
-    },
-    phone: {
-      type: type.STRING,
-      allowNull: false,
-    },
-    e_mail: {
-      type: type.STRING,
-      allowNull: false,
-    },
-    resetPasswordToken: type.STRING,
-    resetPasswordExpires: type.DATE,
+    fern: {
+      type: type.STRING
+    }
+    
   });
