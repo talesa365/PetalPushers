@@ -44,6 +44,10 @@ module.exports = (sequelize, type) => sequelize.define('payment', {
       type: type.STRING,
      
     },
+   payment: {
+      type: type.STRING,
+      allowNull: false,
+    },
     resetPasswordToken: type.STRING,
     resetPasswordExpires: type.DATE,
   });

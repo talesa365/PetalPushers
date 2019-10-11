@@ -79,10 +79,11 @@
 
                 <p>Choose the flowers you want, choose a color if available, and choose the number of each for your bouquet.</p>
                 
-                <form method="get" class="basket_add">
-                    <input type="hidden" name="unitprice" value="29.99" />
+                <form method="POST" class="basket_add">
+                    <!-- <input type="hidden" name="unitprice" value="29.99" />
                     <input type="hidden" name="shipping" value="free" />
                     <input type="hidden" name="category" value="bouquet" />
+                    <input type="hidden" name="" value="" /> -->
                   
           
                     <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies">
@@ -335,20 +336,20 @@
             <div class="row align-items-end">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="firstname">Firt Name</label>
+                  <label for="firstname">*Firt Name</label>
                   <input type="text" id=""class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="lastname">Last Name</label>
+                  <label for="lastname">*Last Name</label>
                   <input type="text" id="lastname"class="form-control" placeholder="">
                 </div>
               </div>
               <div class="w-100"></div>
               <div class="col-md-6">
                   <div class="form-group">
-                      <label for="streetAddress">Street Address</label>
+                      <label for="streetAddress">*Street Address</label>
                       <input type="text" id="address"class="form-control" placeholder="House number and street name">
                     </div>
                   </div>
@@ -380,13 +381,13 @@
               <div class="w-100"></div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="phone">Phone</label>
+                  <label for="phone">*Phone</label>
                   <input type="text" id="phone"class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="emailaddress">Email Address</label>
+                  <label for="emailaddress">*Email Address</label>
                   <input type="text" id="email"class="form-control" placeholder="">
                 </div>
               </div>
@@ -414,7 +415,7 @@
             <div class="col-md-6 d-flex">  
             <div class="col-md-12">
               <div class="cart-detail ftco-bg-dark p-3 p-md-4">
-                <h3 class="billing-heading mb-4">Payment Method</h3>
+                <h3 class="billing-heading mb-4">*Payment Method</h3>
                 <div class="form-group">
                   <div class="col-md-12">
                     <div class="radio">
@@ -441,7 +442,7 @@
           </div>
         </div> <!-- .col-md-8 -->
               <div class="col">
-                  <input type="submit" class="checkout float_right m-5" value="Submit Payment" onclick="PayForIt(event)" />
+                  <input type="submit" class="checkout float_right m-5" value="Submit Payment" onclick="payForIt(event)" />
               </div>
          </form>
               </div>

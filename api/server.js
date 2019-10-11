@@ -13,17 +13,21 @@ app.use(bodyParser.json())
 app.use(cors())
 require('./routes/order.route')
 require('./routes/admin.route')
+require('./routes/payment.route')
 require('./routes/purchasingOrder.route')
 
 
 // serving static files ---------->
 const publicRoot = path.join(__dirname,'../','client');
 app.use(express.static(publicRoot));
-app.get('/admin', (req,res) => {
-    res.sendFile(publicRoot +'/admin.html')
-});
 app.get("/", (req, res) => {
     res.sendFile(publicRoot + '/index.html')
+});
+app.get("/payment", (req, res) => {
+    res.sendFile(publicRoot + '/order.html')
+});
+app.get('/admin', (req,res) => {
+    res.sendFile(publicRoot +'/admin.html')
 });
 app.get('/purchasinOrder', (req,res) => {
     res.sendFile(publicRoot + '/purchasingOrder.html')
