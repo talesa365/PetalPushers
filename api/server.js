@@ -5,16 +5,13 @@ const PORT = 7000;
 const cors = require('cors');
 const path = require('path');
 const mysql = require('mysql');
-
-
-
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors())
-require('./routes/order.route')
-require('./routes/admin.route')
-require('./routes/payment.route')
-require('./routes/purchasingOrder.route')
+require('./routes/admin.route')(app)
+require('./routes/order.route')(app)
+require('./routes/payment.route')(app)
+require('./routes/purchasingOrder.route')(app)
 
 
 // serving static files ---------->
@@ -23,11 +20,14 @@ app.use(express.static(publicRoot));
 app.get("/", (req, res) => {
     res.sendFile(publicRoot + '/index.html')
 });
-app.get("/payment", (req, res) => {
-    res.sendFile(publicRoot + '/order.html')
-});
 app.get('/admin', (req,res) => {
     res.sendFile(publicRoot +'/admin.html')
+});
+app.get("/order", (req, res) => {
+    res.sendFile(publicRoot + '/order.html')
+});
+app.get("/payment", (req, res) => {
+    res.sendFile(publicRoot + '/payment.html')
 });
 app.get('/purchasinOrder', (req,res) => {
     res.sendFile(publicRoot + '/purchasingOrder.html')

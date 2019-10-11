@@ -140,12 +140,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #fc3c3c;
+  color: #3cfc62;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #e80404;
+    color: #3cfc62;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -427,7 +427,7 @@ samp {
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: #3cfc62;
   word-break: break-word; }
   a > code {
     color: inherit; }
@@ -2221,25 +2221,25 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5); }
 
 .btn-outline-primary {
-  color: #fc3c3c;
+  color: #3cfc62;
   background-color: transparent;
   background-image: none;
-  border-color: #fc3c3c; }
+  border-color: #3cfc62; }
   .btn-outline-primary:hover {
     color: #fff;
-    background-color: #fc3c3c;
-    border-color: #fc3c3c; }
+    background-color: #3cfc62;
+    border-color: #3cfc62; }
   .btn-outline-primary:focus, .btn-outline-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(252, 60, 60, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(252, 60, 60, 0.5); }
   .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-    color: #fc3c3c;
+    color: #3cfc62;
     background-color: transparent; }
   .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-primary.dropdown-toggle {
     color: #fff;
-    background-color: #fc3c3c;
-    border-color: #fc3c3c; }
+    background-color: #3cfc62;
+    border-color: #3cfc62; }
     .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-primary.dropdown-toggle:focus {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(252, 60, 60, 0.5);
@@ -3877,8 +3877,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #fc3c3c;
-  border-color: #fc3c3c; }
+  background-color: #3cfc62;
+  border-color: #3cfc62; }
 
 .page-item.disabled .page-link {
   color: #6c757d;

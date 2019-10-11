@@ -30,7 +30,7 @@ module.exports = (sequelize, type) => sequelize.define('payment', {
     },
     zip_code: {
       type: type.STRING,
-  
+      allowNull: false,
     },
     phone: {
       type: type.STRING,

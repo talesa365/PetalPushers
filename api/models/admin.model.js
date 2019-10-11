@@ -5,7 +5,7 @@ module.exports = (sequelize, type) => sequelize.define('employee', {
       autoIncrement: true,
     },
    
-    employee_id:{
+    employee_Id:{
         type: type.STRING,
         allowNull: false
       },

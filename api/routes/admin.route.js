@@ -1,15 +1,13 @@
-const admin= require('../sequelize')
+const admin= require('../sequelize').admin
 module.exports = (app) => {
+//   let adminId = new admin({employee_Id:"997226", employee_password:"petals"})
+//   adminId.save().then((savedAdmin)=>{
+//       console.log(savedAdmin)
+//   });
 
 
 
-
-  let adminId = new AdminId({employee_Id:"997226", password:"petals"})
-  employId.save();
-
-
-
-app.get('/logIn',  (req, res)=> {
+app.post('/logIn',  (req, res)=> {
     console.log(req.body);
     
     adminId.findOne({employee_ID: req.body.employee_Id}, function(err, user){
@@ -24,7 +22,7 @@ app.get('/logIn',  (req, res)=> {
         }else{
             if(employee_Id.password != req.body.password){
                 let err = {
-                    message: "Your employee ID or password doesn't match a known user"
+                    message: "Your employee ID or password doesn't match authorized employee"
                 }
                 err = JSON.stringify(err)
                 console.log("fell in", err);

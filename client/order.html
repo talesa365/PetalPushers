@@ -33,6 +33,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="sale.html" class="nav-link">Whats oOn Sale</a></li>
+          <li class="nav-item"><a href="payment.html" class="nav-link">Payment Center</a></li> 
         </ul>
       </div>
     </div>
@@ -326,125 +327,7 @@
             <input type="submit" class="checkout float_right m-5" value="Process Order" onclick="orderIt(event)" />
         </div>
         <div id="totals"></div>
- <!-- Payment Form------------------------------------------- -->
- <section class="ftco-section mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-8 ftco-animate">
-          <form action="#" class="billing-form ftco-bg-dark p-3 p-md-5 ml-5">
-            <h3 class="mb-4 billing-heading text-center">Billing Details</h3>
-            <div class="row align-items-end">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="firstname">*Firt Name</label>
-                  <input type="text" id=""class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="lastname">*Last Name</label>
-                  <input type="text" id="lastname"class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="w-100"></div>
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label for="streetAddress">*Street Address</label>
-                      <input type="text" id="address"class="form-control" placeholder="House number and street name">
-                    </div>
-                  </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input type="text" id="apart"class="form-control" placeholder="Appartment, suite, unit etc: (optional)">
-                        </div>
-                      </div>
-              <div class="w-100"></div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="towncity">Town / City</label>
-                  <input type="text" id="city"class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="state">State</label>
-                  <input type="text" id="state"class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="w-100"></div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="postcodezip">Postcode / ZIP *</label>
-                  <input type="text" id="zipcode"class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="w-100"></div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="phone">*Phone</label>
-                  <input type="text" id="phone"class="form-control" placeholder="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="emailaddress">*Email Address</label>
-                  <input type="text" id="email"class="form-control" placeholder="">
-                </div>
-              </div>
-            </div>
-          </form><!-- END -->
 
-          <div class="block-22">
-              <div class="container">
-                <div class="row align-items-center justify-content-center">
-                  <div class="col-md-7 text-center">
-                    <h2 class="heading mb-4">Be Sure To Get Your Discount</h2>
-                    <form action="#" class="subscribe">
-                      <div class="form-group">
-                        <input type="text" class="form-control email" placeholder="Enter your promo code">
-                        <!-- <input type="submit" class="btn btn-primary submit"> -->
-                        <button type="submit" id="promo" class="btn btn-primary submit">Promo Code</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          <div class="row mt-5 ml-3 pt-3 d-flex">
-            <div class="col-md-6 d-flex">  
-            <div class="col-md-12">
-              <div class="cart-detail ftco-bg-dark p-3 p-md-4">
-                <h3 class="billing-heading mb-4">*Payment Method</h3>
-                <div class="form-group">
-                  <div class="col-md-12">
-                    <div class="radio">
-                       <label><input type="radio" id="bankTransfer" name="optradio" class="mr-2"> Direct Bank Tranfer</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-12">
-                    <div class="radio">
-                       <label><input type="radio" id="check"name="optradio" class="mr-2"> Check Payment</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-md-12">
-                    <div class="radio">
-                       <label><input type="radio" id="payPal" name="optradio" class="mr-2"> Paypal</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- .col-md-8 -->
-              <div class="col">
-                  <input type="submit" class="checkout float_right m-5" value="Submit Payment" onclick="payForIt(event)" />
-              </div>
-         </form>
               </div>
             </div>  
           </div>

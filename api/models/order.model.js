@@ -5,11 +5,10 @@ module.exports = (sequelize, type) => sequelize.define('order', {
       autoIncrement: true,
     },
     bouquet:{
-      type:type.STRING,
-      
+      type: type.STRING
     }, 
     gift_arrangement:{
-      type: type.STRING,
+      type: type.STRING
    
     },
     fern: {
@@ -17,3 +16,7 @@ module.exports = (sequelize, type) => sequelize.define('order', {
     }
     
   });
+
+//ORM: Object Relational Mapper
+//ODM: Object Document Mapper
+

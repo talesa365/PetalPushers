@@ -343,7 +343,7 @@ function makePayloadFromHTML(){
         }else{
             payload[val.name] = val.value
         }
-        console.log(payload)
+        // console.log(payload)
        
         console.log("nice selection");
 
@@ -408,9 +408,10 @@ fetch('http://localhost:7000/payment/add',{
 	body:payload
 })
 	.then((res)=>
-		res.json()
-	).then((res) =>
-		console.log(res)
+
+	console.log(res),
+	console.log(payload)
+		
 
 	)
 }
