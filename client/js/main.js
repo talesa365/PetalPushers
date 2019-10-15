@@ -285,8 +285,8 @@ function checkId(e){
 	let employee_password = document.getElementById("employee_password");
 
 	let payload = {
-		employee_id: employee_id,
-		employee_password:employee_password
+		employee_id: employee_id.value,
+		employee_password:employee_password.value
 	}
 
 	payload = JSON.stringify(payload)
@@ -303,9 +303,11 @@ function checkId(e){
 	})
 	.then((res)=>
 		res.json()
-	).then((res) =>
+	).then((res) =>{
 		console.log(res)
-
+		window.localStorage.setItem("admin",res.employee_Id);
+		window.localStorage.setItem("authed",res.auth);
+	}
 		)
 }
 //==============================================================================
@@ -315,43 +317,29 @@ function checkId(e){
   
 function orderIt(e){
     e.preventDefault();
-    let payload = makePayloadFromHTML();
-   
-	fetch('http://localhost:7000/order/', {
+	let inputs = document.getElementsByClassName("order-input");
+	let payload = {};
+	for (let i = 0; i < inputs.length; i++) {
+		payload[inputs[i].id] = inputs[i].value
+	}
+	console.log(payload);
+	
+	fetch('http://localhost:7000/order/add', {
 		method: 'POST',
 		mode: "cors",
 		headers: {
 			"content-type": "application/json",
-			payload: payload
+			payload: JSON.stringify(payload)
 		},
-		body:payload
+		body:JSON.stringify(payload)
 	})
 	.then((res)=>
 		res.json()
 	).then((res) =>
 		console.log(res)
-
+	
 		)
 }
-
-function makePayloadFromHTML(){
-    let items= document.getElementsByTagName("input");
-    let payload = {};
-    for (let val of items) {
-        if(val.type === "radio"){
-            payload[val.name] = val.checked
-        }else{
-            payload[val.name] = val.value
-        }
-        // console.log(payload)
-       
-        console.log("nice selection");
-
-    }
-    return payload
-}
-
-  
 
 
   //============================================================================

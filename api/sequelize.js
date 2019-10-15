@@ -11,10 +11,10 @@ const Order = OrderModel(sequelize, Sequelize);
 const Payment = PaymentModel(sequelize, Sequelize);
 const Admin = AdminModel(sequelize, Sequelize);
 
-sequelize.sync().then(() => {
+// sequelize.sync().then(() => {
   // eslint-disable-next-line no-console
-  console.log('Users db and user table have been created');
-});
+//   console.log('Users db and user table have been created');
+// });
 module.exports = {
   order: Order,
   payment: Payment,

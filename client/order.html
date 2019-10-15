@@ -91,12 +91,12 @@
                       <legend class="hidden">Calla Lilies</legend>
                       <div class="qty">
                         <label class="hidden" for="qty">Qty</label>
-                        <input type="number" value="" name="qty" id="callaLilly" class="text spinner" />
+                        <input type="number" value="" name="qty" id="calla-lilly" class="text spinner order-input" />
                       </div>
                       <div class="color">
-                        <label for="colorCL">Color</label>
+                        <label for="color-calla-lilly">Color</label>
                         <!-- Blush, Yellow, Pink, Purple -->
-                        <select name="colorCL" id="colorCL">
+                        <select class="order-input" name="color-calla-lilly" id="color-calla-lilly">
                           <option value="---">Choose one</option>
                           <option value="Blush">Blush</option>
                           <option value="Yellow">Yellow</option>
@@ -110,12 +110,12 @@
                       <legend class="hidden">Gerbera Daisies</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyGD">Qty</label>
-                        <input type="number" value="" name="qty" id="gerberaDaisies" class="text spinner" />
+                        <input type="number" value="" name="qty" id="gerbera-daisies" class="text spinner order-input" />
                       </div>
                       <div class="color">
-                        <label for="colorGD">Color</label>
+                        <label for="color-gerbera-daisies">Color</label>
                         <!-- Purple, Orange, Pink, Yellow -->
-                        <select name="colorGD" id="colorGD">
+                        <select class="order-input" name="colorGD" id="color-gerbera-daisies">
                           <option value="---">Choose one</option>
                           <option value="Purple">Purple</option>
                           <option value="Orange">Orange</option>
@@ -129,12 +129,12 @@
                       <legend class="hidden">Roses</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyR">Qty</label>
-                        <input type="number" value="" name="qtyR" id="roses" class="text spinner" />
+                        <input type="number" value="" name="qtyR" id="rose" class="text spinner order-input" />
                       </div>
                       <div class="color">
-                        <label for="colorR">Color</label>
+                        <label for="colorRose">Color</label>
                         <!-- Pink, Peach, White, Yellow, Red -->
-                        <select name="colorR" id="colorR">
+                        <select class="order-input" name="color-rose" id="colorR">
                           <option value="---">Choose one</option>
                           <option value="Pink">Pink</option>
                           <option value="Peach">Peach</option>
@@ -149,12 +149,12 @@
                       <legend class="hidden">Lilies</legend>
                       <div class="qty">
                         <label class="hidden" for="qty">Qty</label>
-                        <input type="number" value="" name="qty" id="lillies" class="text spinner" />
+                        <input type="number" value="" name="qty" id="lilly" class="text spinner order-input" />
                       </div>
                       <div class="color">
-                        <label for="colorL">Color</label>
+                        <label for="colorLilly">Color</label>
                         <!-- Pink, Red, White, Yellow, Orange -->
-                        <select name="colorL" id="colorL">
+                        <select  class="order-input"name="color-lilly" id="colorL">
                           <option value="---">Choose one</option>
                           <option value="Pink">Pink</option>
                           <option value="Red">Red</option>
@@ -169,12 +169,12 @@
                       <legend class="hidden">Tulips</legend>
                       <div class="qty">
                         <label class="hidden" for="qtyT">Qty</label>
-                        <input type="number" value="" name="qty" id="tulips" class="text spinner" />
+                        <input type="number" value="" name="qty" id="tulip" class="text spinner order-input" />
                       </div>
                       <div class="color">
                         <label for="colorT">Color</label>
                         <!-- Purple, White, Yellow, Golden, Pink, Red -->
-                        <select name="colorT" id="colorT">
+                        <select  class="order-input"name="color-tulip" id="colorTulip">
                           <option value="---">Choose one</option>
                           <option value="Purple">Purple</option>
                           <option value="White">White</option>
@@ -189,9 +189,9 @@
                     <h3>Select a Vase:</h3><br>
                     <div class="rc">
                       <ul>
-                        <li><input type="radio" name="vasetype" id="vase-type-round" value="round"  /> <label for="vase-type-round">Round
+                        <li><input class="order-input"type="radio" name="vase-type" id="vase-type-round-bouquet" value="round"  /> <label for="vase-type-round-bouquet">Round
                              glass</label></li>
-                        <li><input type="radio" name="vasetype" id="vase-type-square" value="square" /> <label for="vase-type-square">Square
+                        <li><input class="order-input"type="radio" name="vasetype" id="vase-type-square-bouquet" value="square" /> <label for="vase-type-square-bouquet">Square
                             glass</label></li>
                       </ul>
                     </div>  
@@ -219,14 +219,14 @@
                 <h3>Select a Pot:</h3><br>
                 <div class="rc">
                   <ul>
-                    <li><input class="mr-2"type="radio" value="decorative-$54.00"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Decorative
+                    <li><input class="mr-2 order-input"type="radio" value="decorative-$54.00"  name="pottype" id="decor-type-arrangement"><label for="pot-type-clay">Decorative
                       </label></li>
   
-                    <li><input type="radio" name="pottype" id="glazed" value="glazed-$14.95"  />
+                    <li><input class="order-input"type="radio" name="pottype" id="glazed-type-arrangement" value="glazed-$14.95"  />
                       <label for="pot-type-glazed">Glazed
                         Ceramic</label></li>
   
-                    <li><input type="radio" name="pottype" id="glass" value="glass-25.95"  /> <label
+                    <li><input class="order-input"type="radio" name="pottype" id="glass-type-arrangement" value="glass-25.95"  /> <label
                        for="pot-type-glazed">Glass
                         Vase</label></li>
                   </ul>
@@ -236,7 +236,7 @@
                 <div class="col">
                   <div class="f_row">
                     <label for="qty" class="auto">Quantity:</label>
-                    <input type="number" class="text small align_centre" name="qty" id="qty" value="" />
+                    <input type="number" class="text small align_centre order-input" name="qty" id="qty" value="" />
                   </div>
                 </div>
               </div>
@@ -285,18 +285,18 @@
                 </ul>
             </div>
             	<!--Fetch-->
-              <form class="mt-5"id="selectPot" name="basket" action="" method="POST">
+              <form class="mt-5 order-input"id="selectPot" name="basket" action="" method="POST">
 							<h3>Select a Pot:</h3><br>
 							<div class="rc">
 								<ul>
-									<li><input class="mr-2"type="radio" value="clay-$19.95"  name="pottype" id="pot-type-clay"><label for="pot-type-clay">Natural Clay
+									<li><input class="mr-2 order-input"type="radio" value="clay-$19.95"  name="pottype" id="pot-type-clay-fern"><label for="pot-type-clay">Natural Clay
 										</label></li>
 
-									<li><input type="radio" name="pottype" id="pot-type-glazed" value="glazed-$19.95"  />
+									<li><input class="order-input"type="radio" name="pottype" id="pot-type-glazed-fern" value="glazed-$19.95"  />
 										<label for="pot-type-glazed">Glazed
 											Ceramic</label></li>
 
-									<li><input type="radio" name="pottype" id="pot-type-glass" value="glass-$19.95"  /> <label
+									<li><input class="order-input"type="radio" name="pottype" id="pot-type-glass-fern" value="glass-$19.95"  /> <label
 										 for="pot-type-glazed">Other</label></li>
 								</ul>
 							</div><!--end radio buttons-->
@@ -304,7 +304,7 @@
 							<div class="col">
 								<div class="f_row">
 									<label for="qty" class="auto">Quantity:</label>
-									<input type="number" class="text small align_centre" name="qty" id="qty" value="" />
+									<input class="order-input"type="number" class="text small align_centre" name="qty" id="qty" value="" />
 								</div>
 						  </div>
             </div>

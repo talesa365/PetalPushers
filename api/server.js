@@ -20,8 +20,8 @@ app.use(express.static(publicRoot));
 app.get("/", (req, res) => {
     res.sendFile(publicRoot + '/index.html')
 });
-app.get('/admin', (req,res) => {
-    res.sendFile(publicRoot +'/admin.html')
+app.use('/admin', (req,res) => {
+    res.sendFile(publicRoot +'/admin/admin.html')
 });
 app.get("/order", (req, res) => {
     res.sendFile(publicRoot + '/order.html')
