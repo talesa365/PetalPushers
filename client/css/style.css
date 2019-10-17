@@ -3219,7 +3219,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #fc3c3c; }
+  background-color: #3cfc8c; }
 
 .nav-fill .nav-item {
   -webkit-box-flex: 1;
@@ -8932,7 +8932,17 @@ textarea.form-control {
 .poor_pager {
 	float: right;
 }
-
+ /* .blink {
+  -webkit-animation: blink 2s step-end infinite;
+  -moz-animation: blink 2s step-end infinite;
+  -o-animation: blink 2s step-end infinite;
+  animation: blink 2s step-end infinite;
+  }
+  @-webkit-keyframes blink { 67% { opacity: 0 }}
+  @-moz-keyframes blink {  67% { opacity: 0 }}
+  @-o-keyframes blink {  67% { opacity: 0 }}
+  @keyframes blink {  67% { opacity: 0 }} */
+  
 .poor_pager li {
 	display: inline-block;
 	margin-left: 20px !important;

@@ -56,15 +56,26 @@ module.exports = (sequelize, type) => sequelize.define('order', {
       type: type.STRING
    
     },
-    gift_arrangement:{
+    gift_arrangement_qty:{
       type: type.STRING
    
     },
-    pot_type_fern: {
+    pot_type_clay_fern: {
       type: type.STRING
     },
-    fern: {
+    pot_type_glazed_fern: {
       type: type.STRING
+    },
+    pot_type_other_fern: {
+      type: type.STRING
+    },
+    fern_qty: {
+      type: type.STRING
+    },
+    order_id:{
+      type: type.STRING,
+       allowNull: false
+
     }
     
   });

@@ -274,6 +274,8 @@ function flash(t) {
 	$("#jump").fadeIn(1000).fadeOut(1500);
 	setTimeout("flash ()",t);
   }
+ 
+  
 
 //==============================================================================
 // ADMINISTRATION FETCH
@@ -305,11 +307,29 @@ function checkId(e){
 		res.json()
 	).then((res) =>{
 		console.log(res)
+		employee_id.value = ""
+		employee_password = ""
 		window.localStorage.setItem("admin",res.employee_Id);
 		window.localStorage.setItem("authed",res.auth);
 	}
 		)
 }
+
+// =========================================================================
+// SUBSCRIBE FUNCTION
+// ===========================================================================
+function enterPromo(e){
+	e.preventDefault()
+	let e_mail = document.getElementById("e_mail").value
+	let p = document.createElement("p")
+	document.getElementsByTagName("p")
+	p.innerText = "Thank You"
+	document.getElementById("subscribe").appendChild(p)
+	window.localStorage.setItem("order_id",e_mail);
+}
+
+
+
 //==============================================================================
 // ORDER FETCH
 // ============================================================================
@@ -317,11 +337,15 @@ function checkId(e){
   
 function orderIt(e){
     e.preventDefault();
+	let order_id = window.localStorage.getItem("order_id")
+	let payload = {
+		order_id:order_id
+	};
 	let inputs = document.getElementsByClassName("order-input");
-	let payload = {};
 	for (let i = 0; i < inputs.length; i++) {
 		payload[inputs[i].id] = inputs[i].value
 	}
+	// payload.id = order_id
 	console.log(payload);
 	
 	fetch('http://localhost:7000/order/add', {
@@ -333,12 +357,17 @@ function orderIt(e){
 		},
 		body:JSON.stringify(payload)
 	})
-	.then((res)=>
+	.then((res)=>{
 		res.json()
-	).then((res) =>
-		console.log(res)
-	
-		)
+	}
+	).then(data=>{
+		console.log(data);
+			
+		// order_id = window.localStorage.getItem("order_id")
+
+		}
+
+	)
 }
 
 
@@ -395,13 +424,10 @@ fetch('http://localhost:7000/payment/add',{
 	},
 	body:payload
 })
-	.then((res)=>
-
-	console.log(res),
-	console.log(payload)
+	.then((res)=>res.json()).then(data=>{
+		console.log(data);
 		
-
-	)
+	})
 }
 
 
