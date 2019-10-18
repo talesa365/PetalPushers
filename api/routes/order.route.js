@@ -40,7 +40,11 @@ module.exports = (app) => {
                     pot_type_other_fern: req.body[" pot-type-other-fern"] || order.pot_type_other_fern,
                     fern_qty: req.body["fern-qty"] || order.fern_qty,
                     order_id: req.body.order_id || order.order_id
-                }).then(res.send(order))
+                }).then(updatedOrder=>{
+                    res.send(JSON.stringify(updatedOrder))
+                })
+                    
+                    
             }else{
                 // console.log(req.body);
                 order.create({

@@ -266,7 +266,17 @@ $(document).ready(function($) {
 	  'autoclose': true
 	});
 
-
+//   promo discount
+$("#promo").click(function() {
+	
+    // $(".promo p").remove();
+   var discount = Math.floor((Math.random()* 60) + 5);
+    var discount_msg = "<p>Your Discount is "+ discount + " %</p>";
+    // console.log(discount);
+    $(this).append(discount_msg);
+    $(this).unbind("click");
+   
+  });
 
 });
 //flashing sale
@@ -275,7 +285,7 @@ function flash(t) {
 	setTimeout("flash ()",t);
   }
  
-  
+
 
 //==============================================================================
 // ADMINISTRATION FETCH
@@ -308,7 +318,7 @@ function checkId(e){
 	).then((res) =>{
 		console.log(res)
 		employee_id.value = ""
-		employee_password = ""
+		employee_password.value = ""
 		window.localStorage.setItem("admin",res.employee_Id);
 		window.localStorage.setItem("authed",res.auth);
 	}
@@ -377,57 +387,46 @@ function orderIt(e){
 
 function payForIt(e){
 	e.preventDefault()
-let first_name = document.getElementById('first_name');
-let last_name = document.getElementById('last_name');
-let address = document.getElementById('address');
-let apart = document.getElementById('apart');
-let city = document.getElementById('city');
-let state = document.getElementById('state');
-let zip_code = document.getElementById('zip_code');
-let phone = document.getElementById('phone');
-let e_mail = document.getElementById('e_mail');
-let promo = document.getElementById('promo');
-let payment = function paymentMethod(){
-	let items= document.getElementsByTagName("input");
-    let method = {};
-    for (let val of items) {
-        if(val.type === "radio"){
-            method[val.name] = val.checked
-        }else{
-            method[val.name] = val.value
+    let order_id = window.localStorage.getItem("order_id")
+        let payload = {
+			order_id:order_id
+		}
+        let userInput = document.getElementsByTagName("input")
+        for (let i = 0; i < userInput.length; i++) {
+            let input = userInput[i]
+            if (input.type === "radio") {
+                if (input.radio) {
+                    payload[input.id] = input.checked
+                }
+            }else{
+                payload[input.id] = input.value
+            }
         }
-        console.log(method)
-
-    }
-}
-let payload = {
-    first_name: first_name,
-    last_name: last_name,
-    address: address,
-    apart : apart,
-    city: city,
-    state : state,
-    zip_code: zip_code, 
-    phone: phone, 
-   e_mail: e_mail,
-    promo : promo,
-    payment: payment
-}
-payload = JSON.stringify(payload)
-
-fetch('http://localhost:7000/payment/add',{
-	method: "POST",
-	mode: "cors",
-	headers: {
-		"content-type": "application/json",
-		payload: payload
-	},
+        // payload.id = order_id
+        console.log(payload)
+        payload = JSON.stringify(payload)
+        // sending the HTTP POST req along w/ form data to node server
+        fetch('http://localhost:7000/payment/add', {
+            method: 'POST',
+            mode: "cors",
+            headers: {
+                "content-type": 'application/json',
+                "accounts": payload
+    
+            },
 	body:payload
 })
-	.then((res)=>res.json()).then(data=>{
-		console.log(data);
-		
-	})
-}
+.then((res) =>
+res.json()
+).then((data) => {
+window.localStorage.removeItem("order_id")
+// if(data.message){
+//    console.log(data, "data");
+//    let d = JSON.stringify(data);
+//    console.log(d);
+//    window.localStorage.setItem("order_id", d)
+// }       
+});
 
+};
 

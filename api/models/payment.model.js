@@ -41,10 +41,14 @@ module.exports = (sequelize, type) => sequelize.define('payment', {
       allowNull: false,
     },
     promo: {
-      type: type.STRING,
+      type: type.BOOLEAN,
      
     },
    payment: {
+      type: type.STRING,
+    
+    },
+    order_id:{
       type: type.STRING,
       allowNull: false,
     },

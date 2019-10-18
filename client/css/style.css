@@ -7956,6 +7956,15 @@ textarea.form-control {
 #jump{
   color: #3cfc59;
 }
+
+#promo{
+  position: absolute;
+  top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  right: 6px;
+  border-radius: 30px;
+}
 .block-22 {
   padding: 3em 0; }
   .block-22 .heading {
@@ -8942,6 +8951,8 @@ textarea.form-control {
   @-moz-keyframes blink {  67% { opacity: 0 }}
   @-o-keyframes blink {  67% { opacity: 0 }}
   @keyframes blink {  67% { opacity: 0 }} */
+
+ 
   
 .poor_pager li {
 	display: inline-block;

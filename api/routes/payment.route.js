@@ -1,28 +1,72 @@
-const order = require('../sequelize')
+const Payment = require('../sequelize').payment
 module.exports = (app) => {
 
 
-    app.post('/add', (req, res)=>{
-        req.body.id = +req.body.id
-        var {first_name, last_name, address,apart,city,state,zip_code,phone,e_mail,payment} = req.body
-        order.findOne({where:{
-            e_mail: req.body.e_mail
-        }}).then(foundOrder=>{
-            foundOrder.update({
-                first_name:first_name || foundOrder.first_name,
-                last_name: last_name || foundOrder.last_name,
-                address: address || foundOrder.address,
-                apart: apart || foundOrder.apart,
-                city: city ||foundOrder.city,
-                state: state || foundOrder.state,
-                zip_code: zip_code || foundOrder.zip_code,
-                phone: phone || foundOrder.phone,
-                e_mail: e_mail || foundOrder.e_mail,
-                payment: payment || foundOrder.payment
-            }).then(updatedOrder=>{
-                console.log(updatedOrder);
-                res.send(JSON.stringify(updatedOrder))
-            })
+
+    app.post('/payment/add', (req, res) => {
+        // console.log(req.body);
+        let order_id = req.body.order_id
+        // req.body.id = +req.body.id
+       
+        Payment.findOne({
+            where: {
+                order_id: order_id
+            }
+        }, function (err, order) {
+            if(err){
+                console.log(err);
+            }
+        }).then((foundPayment, err) => {
+            console.log("FOUND",foundPayment);
+            
+            if (foundPayment !== null) {
+                foundPayment.update({
+                    first_name:req.body.first_name || foundPayment.first_name,
+                    last_name: req.body.last_name || foundPayment.last_name,
+                    address: req.body.address || foundPayment.address,
+                    apart: req.body.apart || foundPayment.apart,
+                    city: req.body.city ||foundPayment.city,
+                    state: req.body.state || foundPayment.state,
+                    zip_code: req.body.zip_code || foundPayment.zip_code,
+                    phone: req.body.phone || foundPayment.phone,
+                    e_mail: req.body.e_mail || foundPayment.e_mail,
+                    promo: req.body.promo || foundPayment.promo,
+                    payment: req.body.payment || foundPayment.payment,
+                    order_id: req.body.order_id || foundPayment.order_id
+                }).then(updatedPayment => {
+                    let x = JSON.stringify(updatedPayment)
+                    console.log(x);
+                    
+                    res.send(x)
+
+                })
+                
+            }else{
+                console.log(req.body);
+                Payment.create({
+                    first_name:req.body.first_name,
+                    last_name: req.body.last_name,
+                    address: req.body.address, 
+                    apart: req.body.apart, 
+                    city: req.body.city, 
+                    state: req.body.state, 
+                    zip_code: req.body.zip_code, 
+                    phone: req.body.phone, 
+                    e_mail: req.body.e_mail ,
+                    promo: req.body.promo, 
+                    payment: req.body.payment, 
+                    order_id: req.body.order_id 
+                }).then(createdPayment => {
+                    console.log("HERE", createdPayment)
+                    let x = JSON.stringify(createdPayment)
+                    console.log(x);
+                    
+                    res.send(JSON.stringify(createdPayment))
+                })
+            }
         })
     })
 }
+
+    
+    
