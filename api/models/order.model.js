@@ -75,7 +75,10 @@ module.exports = (sequelize, type) => sequelize.define('order', {
     order_id:{
       type: type.STRING,
        allowNull: false
-
+    },
+    paymentId:{
+      type: type.INTEGER,
+      allowNull: true
     }
     
   });

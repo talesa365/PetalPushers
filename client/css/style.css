@@ -7962,9 +7962,11 @@ textarea.form-control {
   top: 70px;
   padding-left: 30px;
   padding-right: 30px;
-  right: 6px;
-  border-radius: 30px;
+ right: 1rem;
+  border-radius: 30px;  
 }
+
+
 .block-22 {
   padding: 3em 0; }
   .block-22 .heading {
@@ -9116,6 +9118,11 @@ img{
 margin-right: 1rem;
 margin-top: 1rem;
 }
+
 li{
   list-style: none;
+}
+
+#discount{
+  margin-left: 3rem;
 }
