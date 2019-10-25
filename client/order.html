@@ -100,7 +100,12 @@
               <h2 class="h3 inline_block">From Our Fresh Selection of Flowers</h2>
               <p>Choose the flowers you want, choose a color if available, and choose the number of each for your
                 bouquet.</p>
-              <form method="POST" class="basket_add">
+              	<form method="get" class="basket_add">
+                    <input type="hidden" name="unitprice" value="60.00" />
+                    <input type="hidden" name="shipping" value="0" />
+                    <input type="hidden" name="category" value="bouquet" />
+                    <input type="hidden" name="itemname" value="Bouquet" />
+
                 <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies">
                   <legend class="hidden">Calla Lilies</legend>
                   <div class="qty">
@@ -211,6 +216,10 @@
                         glass</label></li>
                   </ul>
                 </div>
+                <!-- <div id="totals" class="lg_margin_top std_margin clearfix">
+                    <input type="hidden" name="qty" value="1" />
+                    <input type="submit" class="btn checkout" value="Add to cart" />
+                  </div> -->
               </form>
             </div>
           </div>
@@ -289,7 +298,10 @@
           </div>
         </div>
       </div>
-      <div id="totals"></div>
+      <!-- <div id="totals" class="lg_margin_top std_margin clearfix">
+          <input type="hidden" name="qty" value="1" />
+					<input type="submit" class="btn checkout" value="Add to cart" />
+				</div> -->
 
       <!-- End of Arrangements ------------------------------------->
 
@@ -350,11 +362,11 @@
           </div>
         </div>
       </div>
-
-      <div class="col">
+      <div class="col" id="totals">
         <input type="submit" class="checkout float_right m-5" value="Process Order" onclick="orderIt(event)" />
+        <input type="hidden" name="qty" value="1" />
       </div>
-      <div id="totals"></div>
+      
 
     </div>
   </div>
@@ -422,7 +434,7 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/all.js"></script>
+  <!-- <script src="js/all.js"></script> -->
   <script src="js/main.js"></script>
 
 </body>

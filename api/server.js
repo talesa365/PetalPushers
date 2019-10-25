@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors())
 require('./routes/admin.route')(app)
-require('./routes/order.route')(app)
+// require('./routes/order.route')(app)
 require('./routes/payment.route')(app)
 require('./routes/purchasingOrder.route')(app)
 
@@ -29,7 +29,7 @@ app.get("/order", (req, res) => {
 app.get("/payment", (req, res) => {
     res.sendFile(publicRoot + '/payment.html')
 });
-app.get('/purchasinOrder', (req,res) => {
+app.get('/purchasingOrder', (req,res) => {
     res.sendFile(publicRoot + '/purchasingOrder.html')
 });
 app.get('/*', (req, res) => {

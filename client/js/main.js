@@ -1,3 +1,7 @@
+let purchasingOrder = document.getElementById("purchasing-order");
+if(purchasingOrder){
+	purchasingOrder.onload = getOrders();
+}
 AOS.init({
 	duration: 800,
 	easing: 'slide'
@@ -282,10 +286,8 @@ $(document).ready(function ($) {
 // order total
 // =============================================================
 
-	var bab = {
+	var order_total = {
 		init: function () {
-			var query = window.location.search.substring(1),
-				params = query.split('&');
 
 			for (var i in params) {
 				var keyValue = params[i].split('=');
@@ -302,10 +304,56 @@ $(document).ready(function ($) {
 
 			$totalFlowers.html(totalFlowers);
 			$('#total_cost').html('$' + Number(parseFloat($('input[name="unitprice"]')[0].value)).toFixed(2));
+
+			total_cost = window.localStorage.setItem("order_total", order_total )
 		}
 	};
+console.log(order_total);
 
 });
+// Loading Purchasing Order
+function getOrders(){
+	let authed = window.localStorage.getItem("authed");
+	if(authed){
+		
+		fetch('http://www.localhost:7000/purchasingOrder').then(res=>res.json()).then(orders=>{
+			let table = document.getElementById("order-table")
+			for (let i = 0; i < orders.length; i++) {
+				let row = document.createElement("tr");
+				let order_id = document.createElement("td");
+				let order = document.createElement("td");
+				let total = document.createElement("td");
+				order_id.innerText = orders[i].order_id;
+				order.appendChild(makeModal())
+				row.appendChild(order_id);
+				row.appendChild(order);
+				row.appendChild(total);
+				table.appendChild(row);
+console.log();
+
+			}
+		})
+	}
+	function makeModal(){
+		let button = document.createElement("button");
+		let modal = document.createElement("div");
+		modal.innerHTML = "<h3>Orders</h3>";
+		modal.classList.add("hidden");
+		// modal.appendChild()
+		
+		button.onclick = (e)=>{
+			console.log(e.target.firstElementChild);
+			if(e.target.firstElementChild.classList.contains("hidden")){
+				e.target.firstElementChild.classList.remove("hidden");
+			}else{
+				e.target.firstElementChild.classList.add("hidden");
+			}
+		}
+		button.innerText = "Show Order"
+		button.appendChild(modal)
+		return button;
+	}
+}
 //===========================================================================
 // flashing sale
 // ==========================================================================
@@ -455,7 +503,9 @@ function payForIt(e) {
 // LOG OUT
 // ==========================================================
 function logMeOut(e) {
-	window.localStorage.removeItem("order_id")
+	window.localStorage.removeItem("order_id");
+	window.localStorage.removeItem("admin");
+	window.localStorage.removeItem("authed");
 	window.location.reload()
 	window.location = "http://localhost:7000/index.html"
 };

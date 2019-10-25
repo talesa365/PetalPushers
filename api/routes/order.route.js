@@ -3,7 +3,7 @@ const order = require('../sequelize').order
 module.exports = () => {
     console.log("LOADINGAsfgdhfjghkj");
 
-    order.findOne({
+    order.findsql.query({
 
             $and: {
                 order_id: "quincy@quincy.com",

@@ -9113,7 +9113,9 @@ a.checkout, input.checkout {
 	min-width: 130px;
 	min-width: 8.125rem;
 }
-
+.hidden{
+  display: none;
+}
 img{
 margin-right: 1rem;
 margin-top: 1rem;

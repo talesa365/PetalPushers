@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body id="purchasing-order">
       <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
           <div class="container">
             <a class="navbar-brand" href="index.html">Petal Pushers</a>
@@ -19,7 +19,7 @@
       
             <div class="collapse navbar-collapse" id="ftco-nav">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#" onclick="logMeOut(event)" class="nav-link">Log Out</a></li>
               </ul>
             </div>
@@ -44,18 +44,15 @@
       <table class="table table-bordered m-5 col-xl-12">
         <thead>
           <tr>
-            <th>Last Name</th>
-            <th>Email</th>
+            <th>Order_Id</th>
             <th>Order</th>
-            <th>Complete</th>
+            <th>Balances</th>
+            <!-- <th>Complete</th> -->
           </tr>
         </thead>
-        <tbody>
+        <tbody id="order-table">
           <tr>
-            <td>Default</td>
-            <td>def@somemail.com</td>
-            <td>Defaultson</td>
-            <td><button onclick="orderDelete(event)">Delete</button></td>
+           
           </tr>      
           
           </tr>
