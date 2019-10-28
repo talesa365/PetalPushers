@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors())
 require('./routes/admin.route')(app)
-// require('./routes/order.route')(app)
+require('./routes/order.route')(app)
 require('./routes/payment.route')(app)
 require('./routes/purchasingOrder.route')(app)
 

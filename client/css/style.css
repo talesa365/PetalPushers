@@ -9111,11 +9111,13 @@ a.checkout, input.checkout {
 
 #total_cost {
 	min-width: 130px;
-	min-width: 8.125rem;
+  min-width: 8.125rem;
+  font-size: 2rem;
 }
 .hidden{
   display: none;
 }
+
 img{
 margin-right: 1rem;
 margin-top: 1rem;
@@ -9128,3 +9130,4 @@ li{
 #discount{
   margin-left: 3rem;
 }
+

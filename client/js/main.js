@@ -286,29 +286,29 @@ $(document).ready(function ($) {
 // order total
 // =============================================================
 
-	var order_total = {
-		init: function () {
+// 	var order_total = {
+// 		init: function () {
 
-			for (var i in params) {
-				var keyValue = params[i].split('=');
-				keyValue[0].value = keyValue[1];
-			}
+// 			for (let i in params) {
+// 				let keyValue = params[i].split('=');
+// 				keyValue[0].value = keyValue[1];
+// 			}
 
-			var totalFlowers = 0,
-				$totalFlowers = $('#total_flowers'),
-				$qtys = $('.bab_item').find('input[type="number"]');
+// 			let checkout_total = 0,
+// 				checkout_total = $('.checkout_total'),
+// 				$qtys = $('.bab_item').find('input[type="number"]');
 
-			$qtys.each(function (i) {
-				totalFlowers += parseInt($(this)[0].value);
-			});
+// 			$qtys.each(function (i) {
+// 				checkout_total += parseInt($(this)[0].value);
+// 			});
 
-			$totalFlowers.html(totalFlowers);
-			$('#total_cost').html('$' + Number(parseFloat($('input[name="unitprice"]')[0].value)).toFixed(2));
+// 			checkout_total.html(checkout_total);
+// 			$('#checkoutTotal').html('$' + Number(parseFloat($('input[name="unitprice"]')[0].value)).toFixed(2));
 
-			total_cost = window.localStorage.setItem("order_total", order_total )
-		}
-	};
-console.log(order_total);
+// 			window.localStorage.setItem("checkout_total", total);
+// 		}
+// 	};
+// console.log(order_total);
 
 });
 // Loading Purchasing Order
@@ -431,6 +431,11 @@ function orderIt(e) {
 	// payload.id = order_id
 	console.log(payload);
 
+	// calculate cost
+
+	
+	// window.localStorage.setItem("checkout_total", total);
+	
 	fetch('http://localhost:7000/order/add', {
 		method: 'POST',
 		mode: "cors",
@@ -439,14 +444,10 @@ function orderIt(e) {
 			payload: JSON.stringify(payload)
 		},
 		body: JSON.stringify(payload)
-	})
-		.then((res) => {
-			res.json()
-		}
-		).then(data => {
+	}).then(data => {
 			console.log(data);
-
-			// order_id = window.localStorage.getItem("order_id")
+			inputs = " "
+		
 
 		}
 
@@ -457,9 +458,11 @@ function orderIt(e) {
 // ============================================================================
 function payForIt(e) {
 	e.preventDefault()
+	let checkout_total = window.localStorage.getItem("checkout_total")
 	let order_id = window.localStorage.getItem("order_id")
 	let payload = {
-		order_id: order_id
+		order_id: order_id,
+		checkout_total:checkout_total
 	}
 	let userInput = document.getElementsByTagName("input")
 	for (let i = 0; i < userInput.length; i++) {

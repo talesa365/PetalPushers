@@ -101,16 +101,12 @@
               <p>Choose the flowers you want, choose a color if available, and choose the number of each for your
                 bouquet.</p>
               	<form method="get" class="basket_add">
-                    <input type="hidden" name="unitprice" value="60.00" />
-                    <input type="hidden" name="shipping" value="0" />
-                    <input type="hidden" name="category" value="bouquet" />
-                    <input type="hidden" name="itemname" value="Bouquet" />
-
-                <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies">
+                <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies" value="2.50">
                   <legend class="hidden">Calla Lilies</legend>
                   <div class="qty">
                     <label class="hidden" for="qty">Qty</label>
                     <input type="number" value="" name="qty" id="calla-lilly" class="text spinner order-input" />
+                    <input class="hidden checkout_total" name="unitprice" id="2.00" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -130,6 +126,7 @@
                   <div class="qty">
                     <label class="hidden" for="qtyGD">Qty</label>
                     <input type="number" value="" name="qty" id="gerbera-daisy" class="text spinner order-input" />
+                    <input class="hidden checkout_total" name="unitprice" id="2.00" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -149,6 +146,7 @@
                   <div class="qty">
                     <label class="hidden" for="qtyR">Qty</label>
                     <input type="number" value="" name="qtyR" id="rose" class="text spinner order-input" />
+                    <input class="hidden checkout_total" name="unitprice" id="3.00" />
                   </div>
                   <div class="color">
                     <label for="colorRose">Color</label>
@@ -169,6 +167,7 @@
                   <div class="qty">
                     <label class="hidden" for="qty">Qty</label>
                     <input type="number" value="" name="qty" id="lilly" class="text spinner order-input" />
+                    <input class="hidden checkout_total" name="unitprice" id="1.50" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -189,6 +188,7 @@
                   <div class="qty">
                     <label class="hidden" for="qtyT">Qty</label>
                     <input type="number" value="" name="qty" id="tulip" class="text spinner order-input" />
+                    <input class="hidden checkout_total" name="unitprice" id="1.00" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -209,10 +209,14 @@
                 <div class="rc">
                   <ul>
                     <li><input class="order-input" type="radio" name="vase-type" id="vase-type-round-bouquet"
-                        value="round" /> <label for="vase-type-round-bouquet">Round
+                        value="round" />
+                        <input class="hidden checkout_total" name="unitprice" id="12.00" />
+                         <label for="vase-type-round-bouquet">Round
                         glass</label></li>
                     <li><input class="order-input" type="radio" name="vasetype" id="vase-type-square-bouquet"
-                        value="square" /> <label for="vase-type-square-bouquet">Square
+                        value="square" /> 
+                        <input class="hidden checkout_total" name="unitprice" id="12.00" />
+                        <label for="vase-type-square-bouquet">Square
                         glass</label></li>
                   </ul>
                 </div>
@@ -245,16 +249,21 @@
               <div class="rc">
                 <ul>
                   <li><input class="mr-2 order-input" type="radio" value="54.00" name="pottype"
-                      id="decor-type-arrangement"><label for="pot-type-clay">Decorative
+                      id="decor-type-arrangement"/>
+                      <input class="hidden checkout_total" name="unitprice" id="42.00" />
+                      <label for="pot-type-clay">Decorative
                     </label></li>
 
                   <li><input class="order-input" type="radio" name="pottype" id="glazed-type-arrangement"
                       value="29.99" />
+                      <input class="hidden checkout_total" name="unitprice" id="52.00" />
                     <label for="pot-type-glazed">Glazed
                       Ceramic</label></li>
 
                   <li><input class="order-input" type="radio" name="pottype" id="glass-type-arrangement"
-                      value="34.00" /> <label for="pot-type-glazed">Glass
+                      value="34.00" />
+                      <input class="hidden checkout_total" name="unitprice" id="34.00" /> 
+                      <label for="pot-type-glazed">Glass
                       Vase</label></li>
                 </ul>
               </div>
@@ -325,16 +334,20 @@
             <div class="rc">
               <ul>
                 <li><input class="mr-2 order-input" type="radio" value="clay-$19.95" name="pottype"
-                    id="pot-type-clay-fern"><label for="pot-type-clay">Natural Clay
+                    id="pot-type-clay-fern"/>
+                    <input class="hidden checkout_total" name="unitprice" id="19.95" />
+                    <label for="pot-type-clay">Natural Clay
                   </label></li>
 
                 <li><input class="order-input" type="radio" name="pottype" id="pot-type-glazed-fern"
                     value="glazed-$19.95" />
+                    <input class="hidden checkout_total" name="unitprice" id="19.95" />
                   <label for="pot-type-glazed">Glazed
                     Ceramic</label></li>
 
                 <li><input class="order-input" type="radio" name="pottype" id="pot-type-other-fern"
-                    value="glass-$19.95" /> <label for="pot-type-glazed">Other</label></li>
+                    value="glass-$19.95" /> 
+                    <input class="hidden checkout_total" name="unitprice" id="19.95" /><label for="pot-type-glazed">Other</label></li>
               </ul>
             </div>
             <!--end radio buttons-->
@@ -361,7 +374,9 @@
               dry.</p>
           </div>
         </div>
-      </div>
+      </div><br>
+      <div class="col" id="totals"></div>
+      <div id="total_cost">Checkout Total: <span id="checkoutTotal"></span></div>
       <div class="col" id="totals">
         <input type="submit" class="checkout float_right m-5" value="Process Order" onclick="orderIt(event)" />
         <input type="hidden" name="qty" value="1" />
@@ -376,44 +391,34 @@
   </div>
   <!--section--->
   <footer class="footer">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-6 col-lg-6">
-          <h3 class="heading-section">About Us</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse
-            veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore
-            accusantium tempore dolores sunt.</p>
-          <p><a href="#" class="btn btn-primary px-4">Top</a></p>
-        </div>
-
-        <div class="col-md-6 col-lg-6">
-          <div class="block-23">
-            <h3 class="heading-section">Contact Info</h3>
-            <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San
-                  Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a>
-              </li>
-              <li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am - 5:00pm</span>
-              </li>
-            </ul>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-6">
+            <h3 class="heading-section">About Us</h3>
+            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque inventore accusantium tempore dolores sunt.</p>
+            <p><a href="#" class="btn btn-primary px-4">Top</a></p>
           </div>
+          <div class="col-md-6 col-lg-6">
+            <div class="block-23">
+              <h3 class="heading-section">Contact Info</h3>
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                  <li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am - 5:00pm</span></li>
+                </ul>
+              </div>
+          </div> 
         </div>
-
-
-      </div>
-      <div class="row pt-5">
+        <div class="row pt-5">
           <div class="col-md-12 text-center">
             <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This was made with <i class="icon-heart" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank" class="text-primary"></a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This was made with <i class="icon-heart" aria-hidden="true"></i>
             </p>
           </div>
         </div>
-    </div>
-  </footer>
+      </div>
+    </footer>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
@@ -424,8 +429,6 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <!-- <script src="js/popper.min.js"></script> -->
-  <!-- <script src="js/bootstrap.min.js"></script> -->
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.stellar.min.js"></script>
@@ -434,7 +437,6 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
-  <!-- <script src="js/all.js"></script> -->
   <script src="js/main.js"></script>
 
 </body>
