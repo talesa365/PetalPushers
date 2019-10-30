@@ -268,9 +268,9 @@ $(document).ready(function ($) {
 		'autoclose': true
 	});
 
-	// ===================================================
-	//   promo discount
-	// ========================================================
+// =============================================================================
+//   promo discount
+// =============================================================================
 	$("#promo").click(function () {
 
 		// $(".promo p").remove();
@@ -282,36 +282,10 @@ $(document).ready(function ($) {
 		$('#discount').append(discount + "%");
 	});
 
-//================================================================
-// order total
-// =============================================================
-
-// 	var order_total = {
-// 		init: function () {
-
-// 			for (let i in params) {
-// 				let keyValue = params[i].split('=');
-// 				keyValue[0].value = keyValue[1];
-// 			}
-
-// 			let checkout_total = 0,
-// 				checkout_total = $('.checkout_total'),
-// 				$qtys = $('.bab_item').find('input[type="number"]');
-
-// 			$qtys.each(function (i) {
-// 				checkout_total += parseInt($(this)[0].value);
-// 			});
-
-// 			checkout_total.html(checkout_total);
-// 			$('#checkoutTotal').html('$' + Number(parseFloat($('input[name="unitprice"]')[0].value)).toFixed(2));
-
-// 			window.localStorage.setItem("checkout_total", total);
-// 		}
-// 	};
-// console.log(order_total);
-
 });
+// =============================================================================
 // Loading Purchasing Order
+//==============================================================================
 function getOrders(){
 	let authed = window.localStorage.getItem("authed");
 	if(authed){
@@ -354,16 +328,16 @@ console.log();
 		return button;
 	}
 }
-//===========================================================================
+//==============================================================================
 // flashing sale
-// ==========================================================================
+// =============================================================================
 function flash(t) {
 	$("#jump").fadeIn(1000).fadeOut(1500);
 	setTimeout("flash ()", t);
 }
 //==============================================================================
 // ADMINISTRATION FETCH
-// ============================================================================
+// =============================================================================
 function checkId(e) {
 	e.preventDefault()
 	let employee_id = document.getElementById("employee_id");
@@ -403,9 +377,9 @@ function checkId(e) {
 		}
 		)
 };
-// =========================================================================
+// =============================================================================
 // SUBSCRIBE FUNCTION
-// ===========================================================================
+// =============================================================================
 function enterPromo(e) {
 	e.preventDefault()
 	let e_mail = document.getElementById("e_mail").value
@@ -417,7 +391,7 @@ function enterPromo(e) {
 }
 //==============================================================================
 // ORDER FETCH
-// ============================================================================
+// =============================================================================
 function orderIt(e) {
 	e.preventDefault();
 	let order_id = window.localStorage.getItem("order_id")
@@ -428,12 +402,28 @@ function orderIt(e) {
 	for (let i = 0; i < inputs.length; i++) {
 		payload[inputs[i].id] = inputs[i].value
 	}
-	// payload.id = order_id
 	console.log(payload);
 
-	// calculate cost
-
+	// =======================calculate cost==================================
+	let values = document.getElementsByClassName("bab_item");
+	let qty = inputs[0].value;
+	let babCost = {
+		order_id: order_id
+	};
+	for (let i = 0; i < values.length; i++) {
+		babCost[values[i].id] = values[i].id
+	}
+	let price = babCost[values]
 	
+	let totalItemCost = qty * price
+	
+	
+	console.log(qty);
+	console.log(price);
+	console.log(babCost);
+	console.log(totalItemCost);
+	
+	// console.log(totalItemCost)
 	// window.localStorage.setItem("checkout_total", total);
 	
 	fetch('http://localhost:7000/order/add', {
@@ -453,9 +443,9 @@ function orderIt(e) {
 
 		)
 }
-//============================================================================
+//==============================================================================
 // PAYMENT FETCH
-// ============================================================================
+// =============================================================================
 function payForIt(e) {
 	e.preventDefault()
 	let checkout_total = window.localStorage.getItem("checkout_total")
@@ -502,9 +492,9 @@ function payForIt(e) {
 		});
 
 };
-// ========================================================
+// =============================================================================
 // LOG OUT
-// ==========================================================
+// =============================================================================
 function logMeOut(e) {
 	window.localStorage.removeItem("order_id");
 	window.localStorage.removeItem("admin");

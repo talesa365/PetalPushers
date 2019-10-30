@@ -13,10 +13,8 @@
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/magnific-popup.css">
-  <!-- <link rel="stylesheet" href="css/aos.css"> -->
   <link rel="stylesheet" href="css/ionicons.min.css">
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <!-- <link rel="stylesheet" href="css/jquery.timepicker.css"> -->
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
@@ -100,13 +98,13 @@
               <h2 class="h3 inline_block">From Our Fresh Selection of Flowers</h2>
               <p>Choose the flowers you want, choose a color if available, and choose the number of each for your
                 bouquet.</p>
-              	<form method="get" class="basket_add">
-                <fieldset class="bab_item" id="bab-CL" data-legend="Calla Lilies" value="2.50">
+   <!--==========================   calla lilly   ========================== -->
+              	<form method="GET" class="basket_add">
+                <fieldset class="bab_item" id="1.75" data-legend="Calla Lilies">
                   <legend class="hidden">Calla Lilies</legend>
                   <div class="qty">
-                    <label class="hidden" for="qty">Qty</label>
-                    <input type="number" value="" name="qty" id="calla-lilly" class="text spinner order-input" />
-                    <input class="hidden checkout_total" name="unitprice" id="2.00" />
+                    <label>Qty</label>
+                    <input   type="number" value="" name="qty" id="calla-lilly" class="text spinner order-input" data-target="1.75" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -120,13 +118,12 @@
                     </select>
                   </div>
                 </fieldset>
-
-                <fieldset class="bab_item" id="bab-GD" data-legend="Gerbera Daisies">
+  <!--==========================   gerba daisy   ========================== -->
+                <fieldset class="bab_item" id="1.75" data-legend="Gerbera Daisies">
                   <legend class="hidden">Gerbera Daisies</legend>
                   <div class="qty">
                     <label class="hidden" for="qtyGD">Qty</label>
-                    <input type="number" value="" name="qty" id="gerbera-daisy" class="text spinner order-input" />
-                    <input class="hidden checkout_total" name="unitprice" id="2.00" />
+                    <input type="number" value="" name="qty" id="gerbera-daisy" class="text spinner order-input" data-target="1.75" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -140,13 +137,12 @@
                     </select>
                   </div>
                 </fieldset>
-
-                <fieldset class="bab_item" id="bab-R" data-legend="Roses">
+  <!--==========================   Rose   ========================== -->
+                <fieldset class="bab_item" id="3.00" data-legend="Roses">
                   <legend class="hidden">Roses</legend>
                   <div class="qty">
                     <label class="hidden" for="qtyR">Qty</label>
-                    <input type="number" value="" name="qtyR" id="rose" class="text spinner order-input" />
-                    <input class="hidden checkout_total" name="unitprice" id="3.00" />
+                    <input type="number" value="" name="qtyR" id="rose" class="text spinner order-input" data-target="3.00"/>
                   </div>
                   <div class="color">
                     <label for="colorRose">Color</label>
@@ -161,13 +157,15 @@
                     </select>
                   </div>
                 </fieldset>
-
-                <fieldset class="bab_item" id="bab-L" data-legend="Lilies">
+  <!--==========================    lilly   ========================== -->
+                <fieldset class="bab_item" id="1.25" data-legend="Lilies" 
+                
+                
+                >
                   <legend class="hidden">Lilies</legend>
                   <div class="qty">
                     <label class="hidden" for="qty">Qty</label>
-                    <input type="number" value="" name="qty" id="lilly" class="text spinner order-input" />
-                    <input class="hidden checkout_total" name="unitprice" id="1.50" />
+                    <input type="number" value="" name="2.00" id="lilly" class="text spinner order-input" data-target="2.00" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -182,13 +180,12 @@
                     </select>
                   </div>
                 </fieldset>
-
-                <fieldset class="bab_item" id="bab-T" data-legend="Tulips">
+  <!--==========================   tulip  ========================== -->
+                <fieldset class="bab_item" id="1.25" data-legend="Tulips">
                   <legend class="hidden">Tulips</legend>
                   <div class="qty">
                     <label class="hidden" for="qtyT">Qty</label>
-                    <input type="number" value="" name="qty" id="tulip" class="text spinner order-input" />
-                    <input class="hidden checkout_total" name="unitprice" id="1.00" />
+                    <input type="number" value="" name="qty" id="tulip" class="text spinner order-input" data-target="1.25" />
                   </div>
                   <div class="color">
                     <label for="color">Color</label>
@@ -204,26 +201,20 @@
                     </select>
                   </div>
                 </fieldset>
-
+  <!--==========================   calla lilly   ========================== -->
                 <h3>Select a Vase:</h3><br>
                 <div class="rc">
                   <ul>
                     <li><input class="order-input" type="radio" name="vase-type" id="vase-type-round-bouquet"
-                        value="round" />
-                        <input class="hidden checkout_total" name="unitprice" id="12.00" />
+                        value="round" data-target="12.00"/>
                          <label for="vase-type-round-bouquet">Round
                         glass</label></li>
                     <li><input class="order-input" type="radio" name="vasetype" id="vase-type-square-bouquet"
-                        value="square" /> 
-                        <input class="hidden checkout_total" name="unitprice" id="12.00" />
+                        value="square" data-target="12.00"/> 
                         <label for="vase-type-square-bouquet">Square
                         glass</label></li>
                   </ul>
                 </div>
-                <!-- <div id="totals" class="lg_margin_top std_margin clearfix">
-                    <input type="hidden" name="qty" value="1" />
-                    <input type="submit" class="btn checkout" value="Add to cart" />
-                  </div> -->
               </form>
             </div>
           </div>
@@ -248,21 +239,18 @@
               <h3>Select a Pot:</h3><br>
               <div class="rc">
                 <ul>
-                  <li><input class="mr-2 order-input" type="radio" value="54.00" name="pottype"
+                  <li><input class="mr-2 order-input" type="radio" value="54.00" name="pottype" data-target="54.00"
                       id="decor-type-arrangement"/>
-                      <input class="hidden checkout_total" name="unitprice" id="42.00" />
                       <label for="pot-type-clay">Decorative
                     </label></li>
 
-                  <li><input class="order-input" type="radio" name="pottype" id="glazed-type-arrangement"
+                  <li><input class="order-input" type="radio" name="pottype" id="glazed-type-arrangement" data-target="29.99"
                       value="29.99" />
-                      <input class="hidden checkout_total" name="unitprice" id="52.00" />
                     <label for="pot-type-glazed">Glazed
                       Ceramic</label></li>
 
-                  <li><input class="order-input" type="radio" name="pottype" id="glass-type-arrangement"
-                      value="34.00" />
-                      <input class="hidden checkout_total" name="unitprice" id="34.00" /> 
+                  <li><input class="order-input" type="radio" name="pottype" id="glass-type-arrangement" data-target="34.00"
+                      value="34.00" /> 
                       <label for="pot-type-glazed">Glass
                       Vase</label></li>
                 </ul>
@@ -307,10 +295,6 @@
           </div>
         </div>
       </div>
-      <!-- <div id="totals" class="lg_margin_top std_margin clearfix">
-          <input type="hidden" name="qty" value="1" />
-					<input type="submit" class="btn checkout" value="Add to cart" />
-				</div> -->
 
       <!-- End of Arrangements ------------------------------------->
 
@@ -333,21 +317,19 @@
             <h3>Select a Pot:</h3><br>
             <div class="rc">
               <ul>
-                <li><input class="mr-2 order-input" type="radio" value="clay-$19.95" name="pottype"
+                <li><input class="mr-2 order-input" type="radio" value="clay-$19.95" name="pottype" data-target="19.95"
                     id="pot-type-clay-fern"/>
-                    <input class="hidden checkout_total" name="unitprice" id="19.95" />
                     <label for="pot-type-clay">Natural Clay
                   </label></li>
 
-                <li><input class="order-input" type="radio" name="pottype" id="pot-type-glazed-fern"
+                <li><input class="order-input" type="radio" name="pottype" id="pot-type-glazed-fern" data-target="24.95"
                     value="glazed-$19.95" />
-                    <input class="hidden checkout_total" name="unitprice" id="19.95" />
                   <label for="pot-type-glazed">Glazed
                     Ceramic</label></li>
 
                 <li><input class="order-input" type="radio" name="pottype" id="pot-type-other-fern"
                     value="glass-$19.95" /> 
-                    <input class="hidden checkout_total" name="unitprice" id="19.95" /><label for="pot-type-glazed">Other</label></li>
+                  <label for="pot-type-glazed">Other</label></li>
               </ul>
             </div>
             <!--end radio buttons-->
@@ -438,6 +420,7 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/main.js"></script>
+ 
 
 </body>
 
