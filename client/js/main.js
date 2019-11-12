@@ -272,14 +272,21 @@ $(document).ready(function ($) {
 //   promo discount
 // =============================================================================
 	$("#promo").click(function () {
-
+		
 		// $(".promo p").remove();
-		var discount = Math.floor((Math.random() * 60) + 5);
+		var discount = Math.floor((Math.random() * 10)+ 2);
 		var discount_msg = "<p>Your Discount is " + discount + " %</p>";
-		// console.log(discount);
-		$(this).append(discount_msg);
+		discountPercent = discount * .01;
+		// console.log(discountPercent);
+		$('#promoDiscount').append(discount_msg);
 		$(this).unbind("click");
 		$('#discount').append(discount + "%");
+		let sub_total = window.localStorage.getItem("sub_Total");
+		$('#sub_total').append(sub_total)
+		let discountTotal = sub_total * discountPercent;
+		let total =  sub_total - discountTotal;
+		$("#total").append(`$${total}`);
+		
 	});
 
 });
@@ -287,10 +294,13 @@ $(document).ready(function ($) {
 // Loading Purchasing Order
 //==============================================================================
 function getOrders(){
+	
 	let authed = window.localStorage.getItem("authed");
 	if(authed){
 		
 		fetch('http://www.localhost:7000/purchasingOrder').then(res=>res.json()).then(orders=>{
+			console.log(orders);
+			
 			let table = document.getElementById("order-table")
 			for (let i = 0; i < orders.length; i++) {
 				let row = document.createElement("tr");
@@ -298,22 +308,52 @@ function getOrders(){
 				let order = document.createElement("td");
 				let total = document.createElement("td");
 				order_id.innerText = orders[i].order_id;
-				order.appendChild(makeModal())
+				order.appendChild(makeModal(orders[i]))
 				row.appendChild(order_id);
 				row.appendChild(order);
 				row.appendChild(total);
 				table.appendChild(row);
-console.log();
 
 			}
 		})
 	}
-	function makeModal(){
+	function makeModal(orderEle){
+		console.log(orderEle);
+
+		let table = document.createElement("table");
+		let tr = document.createElement("tr");
+		let th1 = document.createElement("th");
+		th1.innerText = "Flower Name";
+		let th2 = document.createElement("th");
+		th2.innerText = "Flower Color";
+		let th3 = document.createElement("th");
+		th3.innerText = "Flower Qty";
+		tr.appendChild(th1);
+		tr.appendChild(th2);
+		tr.appendChild(th3);
+		table.appendChild(tr)
+
+		for (const prop in orderEle) {
+			console.log(prop);
+			let tr = document.createElement("tr")
+			let td1 = document.createElement("td")
+			let td2 = document.createElement("td")
+			let td3 = document.createElement("td")
+			tr.appendChild(td1)
+			tr.appendChild(td2)
+			tr.appendChild(td3)
+			if(typeof +orderEle[prop] === "number" && +orderEle[prop] > 0){
+				td3.innerText = +orderEle[prop]
+				
+			}
+			table.appendChild(tr)
+			// console.log(orderEle[prop]);				
+		}
 		let button = document.createElement("button");
 		let modal = document.createElement("div");
 		modal.innerHTML = "<h3>Orders</h3>";
+		modal.appendChild(table)
 		modal.classList.add("hidden");
-		// modal.appendChild()
 		
 		button.onclick = (e)=>{
 			console.log(e.target.firstElementChild);
@@ -389,6 +429,34 @@ function enterPromo(e) {
 	document.getElementById("subscribe").appendChild(p)
 	window.localStorage.setItem("order_id", e_mail);
 }
+function calcTotal(e){
+		
+	let qty= document.getElementsByClassName("form-control").value;
+	let price = document.getElementsByClassName("price");
+	let rowTotal = document.getElementsByClassName("total");
+	rowTotal = qty* price;
+	rowTotal.innerText = `$${rowTotal}.00`;
+
+	
+	let currentTotal = 0;
+	for(let i = 0; i < rowTotal.length; i++){
+		let rowT = document.getElementsByClassName(values[i].id)[0];
+		rowT= rowT.innerText.slice(1)
+		currentTotal += +rowT
+	}
+	let subtotal = document.getElementById("subtotal");
+	subtotal.innerText = `$${currentTotal}.00`;
+if(target.value >= 3){
+	let ranDiscount = Math.floor(Math.random()*30)-5;
+	let discount = document.getElementById("discount")
+	discount = total - ranDiscount;
+	discount.innerText = "$" + discount + ".00"
+}
+let checkoutTotal = doc.getElementById("total-price");
+checkoutTotal.innerText = `$${currentTotal - discount}.00`;
+
+
+}
 //==============================================================================
 // ORDER FETCH
 // =============================================================================
@@ -398,33 +466,28 @@ function orderIt(e) {
 	let payload = {
 		order_id: order_id
 	};
+	let items = document.getElementsByClassName("product")
+	console.log(items)
+	for (let i = 0; i < items.length; i++) {
+		console.log(items[i])
+	}
+
 	let inputs = document.getElementsByClassName("order-input");
-	for (let i = 0; i < inputs.length; i++) {
+	for (var i = 1; i < inputs.length; i++) {
+		if(inputs[i].type === "number"){
+			console.log("HEYHEYHEY");
+			console.log(inputs[i].value)
+		}
 		payload[inputs[i].id] = inputs[i].value
 	}
 	console.log(payload);
+	
 
 	// =======================calculate cost==================================
-	let values = document.getElementsByClassName("bab_item");
-	let qty = inputs[0].value;
-	let babCost = {
-		order_id: order_id
-	};
-	for (let i = 0; i < values.length; i++) {
-		babCost[values[i].id] = values[i].id
-	}
-	let price = babCost[values]
 	
-	let totalItemCost = qty * price
+
 	
-	
-	console.log(qty);
-	console.log(price);
-	console.log(babCost);
-	console.log(totalItemCost);
-	
-	// console.log(totalItemCost)
-	// window.localStorage.setItem("checkout_total", total);
+	calcTotal()
 	
 	fetch('http://localhost:7000/order/add', {
 		method: 'POST',
@@ -437,17 +500,18 @@ function orderIt(e) {
 	}).then(data => {
 			console.log(data);
 			inputs = " "
+		})
 		
-
-		}
-
-		)
+	
+		window.location = "http://localhost:7000/payment.html"
 }
 //==============================================================================
 // PAYMENT FETCH
 // =============================================================================
 function payForIt(e) {
 	e.preventDefault()
+	var modal = document.getElementById("myModal")    
+    modal.classList.remove("hidden")
 	let checkout_total = window.localStorage.getItem("checkout_total")
 	let order_id = window.localStorage.getItem("order_id")
 	let payload = {
@@ -483,12 +547,7 @@ function payForIt(e) {
 			res.json()
 		).then((data) => {
 			window.localStorage.removeItem("order_id")
-			// if(data.message){
-			//    console.log(data, "data");
-			//    let d = JSON.stringify(data);
-			//    console.log(d);
-			//    window.localStorage.setItem("order_id", d)
-			// }       
+			// window.location = "http://localhost:7000/index.html"
 		});
 
 };

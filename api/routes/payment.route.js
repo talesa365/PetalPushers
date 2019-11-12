@@ -31,6 +31,7 @@ module.exports = (app) => {
                     phone: req.body.phone || foundPayment.phone,
                     e_mail: req.body.e_mail || foundPayment.e_mail,
                     promo: req.body.promo || foundPayment.promo,
+                   total: req.body.total || foundPayment.total,
                     payment: req.body.payment || foundPayment.payment,
                     order_id: req.body.order_id || foundPayment.order_id
                 }).then(updatedPayment => {
@@ -54,6 +55,7 @@ module.exports = (app) => {
                     phone: req.body.phone, 
                     e_mail: req.body.e_mail ,
                     promo: req.body.promo, 
+                    total: req.body.total, 
                     payment: req.body.payment, 
                     order_id: req.body.order_id 
                 }).then(createdPayment => {

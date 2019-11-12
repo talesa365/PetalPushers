@@ -4,7 +4,6 @@ const app = express();
 const PORT = 7000;
 const cors = require('cors');
 const path = require('path');
-const mysql = require('mysql');
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(cors())

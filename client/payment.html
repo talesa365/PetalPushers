@@ -58,10 +58,11 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7 text-center">
             <h2 class="heading mb-4">Be Sure To Get Your Discount</h2>
+            <h3>Enter Promo Jump4Joy</h3>
             <div class="form-group">
               <input type="text" class="form-control email" placeholder="Enter your promo code">
-              <!-- <input type="submit" class="btn btn-primary submit"> -->
-              <button type="submit" id="promo" class="btn btn-primary submit ">Promo Code</button>
+              <button type="submit" id="promo" class="btn btn-primary submit ">Submit to check out</button>
+              <span id="promoDiscount"></span>
             </div>
           </div>
         </div>
@@ -142,7 +143,7 @@
                 <h3 class="billing-heading mb-4">Basket Total<img class="m-0" src="images/basket.png"></h3>
                 <p class="d-flex">
                   <span>Subtotal</span>
-                  <span id="total_cost"></span>
+                  <span id="sub_total"></span>
                 </p>
                 <p class="d-flex">
                   <span>Delivery</span>
@@ -198,7 +199,7 @@
           </div> <!-- .col-md-8 -->
         </form>
           <div class="col">
-            <input type="submit" class="checkout float_right m-5" value="Submit Payment" onclick="payForIt(event)" />
+            <input type="submit" class="checkout float_right m-5" value="Submit Payment"  onclick="payForIt(event)" />
           </div>
         </div>
       </div>
@@ -209,7 +210,7 @@
     <!--container-->
     </div>
   </section>
-  <!--section--->
+  <!--section--->  
   <footer class="footer">
       <div class="container">
         <div class="row mb-5">

@@ -4345,12 +4345,27 @@ button.close {
   border: 0;
   -webkit-appearance: none; }
 
+#myModal{
+  position: absolute;
+  background-color: white;
+  background-image: url(../images/bloom.png);
+  opacity: 0.9;
+  margin:23%;
+  margin-top:30%;
+  transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+  padding: 20.5rem 2.5rem;
+  width: 50rem;
+  max-width: 100%;
+  border:.25rem solid limegreen;
+  border-radius: 4px;
+  
+  }
 .modal-open {
   overflow: hidden; }
 
 .modal {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 45rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -4393,7 +4408,8 @@ button.close {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  min-height: calc(100% - (0.5rem * 2)); }
+  min-height: calc(100% - (0.5rem * 2));
+ }
 
 .modal-content {
   position: relative;
@@ -4408,8 +4424,9 @@ button.close {
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid limegreen;
   border-radius: 0.3rem;
+  margin-bottom: 18rem;
   outline: 0; }
 
 .modal-backdrop {
@@ -4419,11 +4436,11 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000; }
+  background-color: rgb(102, 233, 124); }
   .modal-backdrop.fade {
     opacity: 0; }
   .modal-backdrop.show {
-    opacity: 0.5; }
+    opacity: 0.25; }
 
 .modal-header {
   display: -webkit-box;
@@ -4452,7 +4469,9 @@ button.close {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1rem; }
+  padding: 1rem;
+  
+}
 
 .modal-footer {
   display: -webkit-box;
@@ -7958,20 +7977,23 @@ textarea.form-control {
 }
 
 #promo{
-  position: absolute;
-  top: 70px;
-  padding-left: 30px;
-  padding-right: 30px;
- right: 1rem;
-  border-radius: 30px;  
+    position: absolute;
+    top: 7.9rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    right: 1rem;
+    border-radius: 30px;
+    color: black;
 }
 
 
 .block-22 {
   padding: 3em 0; }
   .block-22 .heading {
-    font-size: 30px;
-    font-weight: 300; }
+    font-size: 35px;
+    font-weight: 600;
+    
+   }
   .block-22 .subscribe .form-group {
     position: relative; }
   .block-22 .subscribe .email {
@@ -7986,7 +8008,7 @@ textarea.form-control {
     padding-right: 30px;
     right: 6px;
     border-radius: 30px;
-    color: #fff; }
+    color: black; }
     .block-22 .subscribe .submit:hover {
       color: #000; }
 
@@ -9126,14 +9148,27 @@ margin-top: 1rem;
 li{
   list-style: none;
 }
-
+#promoDiscount{
+  font-size: 2rem;
+}
 #discount{
   margin-left: 3rem;
 }
 #delivery{
   margin-left: 3rem;
 }
-#subtotal{
+#sub_total{
+  margin-left: 3rem;
+ 
+}
+#total{
   margin-left: 3rem;
 }
+.enter{
+  font-family: important
+  color: lawngreen
+}
 
+.email{
+  border-radius: 30px;
+}

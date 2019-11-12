@@ -44,6 +44,10 @@ module.exports = (sequelize, type) => sequelize.define('payment', {
       type: type.BOOLEAN,
      
     },
+    total: {
+      type: type.STRING,
+    
+    },
    payment: {
       type: type.STRING,
     
