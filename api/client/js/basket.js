@@ -14,9 +14,11 @@ function buildTable(obj){
     for (const key in obj) {
         let tr = document.createElement("tr")
         if (key === "vase") {
-            let p = document.createElement("p")
-            p.innerText = `You selected a ${obj[key]} vase.`
+           
+            let p = document.getElementById("vaseType")
+            p.innerText = `Your Blooms will come nested in  a ${obj[key]} vase.`
             orderTable.appendChild(p)
+          
         }else{
             let td1 = document.createElement("td")
             td1.innerText = key
@@ -24,9 +26,11 @@ function buildTable(obj){
             td2.innerText = obj[key].color
             let td3 = document.createElement("td")
             td3.innerText = obj[key].number
+          
             tr.appendChild(td1)
             tr.appendChild(td2)
             tr.appendChild(td3)
+          
         }
         orderTable.appendChild(tr)
     }
@@ -56,14 +60,3 @@ function submitPayment(e){
         }
     })
 }
-// document.readyState = (() => {
-//     fetch(`http://localhost:7000/order/${window.localStorage.getItem("order_id")}`).then(res => res.json()).then(data => {
-//         let total = 0;
-//         let totalFlowers = data.calla_lilly
-//         console.log(totalFlowers);
-//         // console.log(total + totalFlowers);
-        
-        
-//     })
-//     console.log("Loaded!")
-// })()

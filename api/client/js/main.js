@@ -429,7 +429,7 @@ function chooseVase(e){
 	vase.innerText = `$${value}`
 	order["vase"] = type
 }
-
+	// =======================calculate cost==================================
 function calcTotal(e) {
 		let target = e.target;
 		let color = document.getElementById(`color-${e.target.name}`).value
@@ -441,18 +441,27 @@ function calcTotal(e) {
 		let subtotal = document.getElementById("subtotal");
 		let checkoutTotal = document.getElementById("total-price");
 		let total = target.value * target.dataset.value;
-		
+		let vase = document.getElementsByClassName("vaseType");
 		let currentTotal = 0;
-		rowTotal.innerText = `$${total}0`;
+		rowTotal.innerText = `$${total.toFixed(2)}`;
 		for (let i = 0; i < values.length; i++) {
 			let rowT = document.getElementsByClassName(values[i].id)[0];
 			rowT = rowT.innerText.slice(1)
 			currentTotal += +rowT 
 		}
+		
+	
+		subtotal.innerText = `$${currentTotal.toFixed(2)}`;
+		checkoutTotal.innerText = `$${currentTotal}0`;
+	
+		if(target.value >= 5){
+			vase.innerText = "Free with purchase"
+		}else {
+			vase = `${vase}`.value	
+			checkoutTotal.innerText = `$${currentTotal + vase}0`;
+		}
 
 	
-		subtotal.innerText = `$${currentTotal}0`;
-		checkoutTotal.innerText = `$${currentTotal}0`;
 	
 }
 //==============================================================================
@@ -467,7 +476,6 @@ function orderIt(e) {
 			"order_id" : order_id,
 			order: order
 		}	
-		// =======================calculate cost==================================
 	
 		fetch('http://localhost:7000/order/add', {
 			method: 'POST',
@@ -513,7 +521,7 @@ function payForIt(e) {
 			payload[input.id] = input.value
 		}
 	}
-	// payload.id = order_id
+
 	console.log(payload)
 	payload = JSON.stringify(payload)
 	// sending the HTTP POST req along w/ form data to node server
@@ -531,7 +539,7 @@ function payForIt(e) {
 			res.json()
 		).then((data) => {
 			window.localStorage.removeItem("order_id")
-			// window.location = "http://localhost:7000/index.html"
+			
 		});
 
 };

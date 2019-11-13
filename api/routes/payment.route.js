@@ -19,7 +19,7 @@ module.exports = (app) => {
         console.log(req.body);  
         if(order_id !== null){
             connection.query(`insert into payments set ?`, req.body, (err, results)=>{
-                console.log(err, "HERE IT IS!", results.insertId)
+                console.log(err, "HERE IT IS!", results)
                 if(err){
                     console.log(err);
                 }else{

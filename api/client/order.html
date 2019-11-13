@@ -216,8 +216,7 @@
 
 		<td class="price">$1.90</td>
 		<td class="total quantity4"></td>
-
-		</tr><!-- END TR-->
+			</tr><!-- END TR-->
 		<!------------gerbera daisy---------------------->
 		<tr class="text-center">
 			<td class="image-prod">
@@ -442,7 +441,7 @@
 							<h3 class="product-name">Elegant Glass Vase</h3>
 							<p>A small river named Duden flows by their place and supplies</p>
 							<p class="product-price"><span>$12.90</span></p>
-							<p data-type="glass" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+							<p data-type="glass" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary vaseType" id="glass">Add to Basket</p>
 						</div>
 					</div>
 				</div>
@@ -453,7 +452,7 @@
 							<h3 class="product-name">Stylish Ceramic Vase</h3>
 							<p>A small river named Duden flows by their place and supplies</p>
 							<p class="product-price"><span>$12.90</span></p>
-							<p data-type="ceramic" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+							<p data-type="ceramic" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary vaseType" id="ceramic">Add to Basket</p>
 						</div>
 					</div>
 				</div>
@@ -464,7 +463,7 @@
 							<h3 class="product-name">Unique Style Vase</h3>
 							<p>A small river named Duden flows by their place and supplies</p>
 							<p class="product-price"><span>$10.90</span></p>
-							<p data-type="unique style" data-value="10.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+							<p data-type="unique style" data-value="10.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary vaseType" id="unique">Add to Basket</p>
 						</div>
 					</div>
 				</div>
@@ -475,7 +474,7 @@
 							<h3 class="product-name">Decorative Type Vase</h3>
 							<p>A small river named Duden flows by their place and supplies</p>
 							<p class="product-price"id="15.90"><span>$15.90</span></p>
-							<p data-type="decorative" data-value="15.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+							<p data-type="decorative" data-value="15.90" name="decorative"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary vaseType" id="15.90">Add to Basket</p>
 						</div>
 					</div>
 				</div>
@@ -491,7 +490,7 @@
 					<span id="subtotal"></span>
 				</p>
 				<p class="d-flex">
-						<span class="mr-5">Vase</span>
+						<span class="mr-5 pr-3">Vase</span>
 						<span id="vase"></span>
 					</p>
 				<p class="d-flex">
@@ -501,7 +500,7 @@
 			
 				<hr>
 				<p class="d-flex total-price">
-					<span class="mr-5">Total</span>
+					<span class="mr-5 pr-3">Total</span>
 					<span id="total-price"></span>
 				</p>
 			</div>
@@ -525,12 +524,9 @@
 					<div class="block-23">
 						<h3 class="heading-section">Contact Info</h3>
 						<ul>
-							<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View,
-									San Francisco, California, USA</span></li>
-							<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
-										210</span></a></li>
-							<li><a href="#"><span class="icon icon-envelope"></span><span
-										class="text">info@yourdomain.com</span></a></li>
+						    <li><span class="icon icon-map-marker"></span><span class="text">2596 North Michigan Road, Fishers, Indiana, USA</span></li>
+                      <li><a href="#"><span class="icon icon-phone"></span><span class="text">+1 317 3929 210</span></a></li>
+                      <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
 							<li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am -
 									5:00pm</span></li>
 						</ul>

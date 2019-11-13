@@ -9162,4 +9162,19 @@ li{
   font-family: important
   color: lawngreen
 }
+.orderH2{
+  color: limegreen; 
+}
+
+.thead{
+  font-family:mystery quest;
+  color: limegreen; 
+  font-size: 1.5rem;
+ 
+}
+.order-table {
+  table-layout: fixed;
+  width: auto;
+  border: 1px solid gray;
+}
 
