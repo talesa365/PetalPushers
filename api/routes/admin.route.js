@@ -1,17 +1,22 @@
-const admin= require('../sequelize').admin
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Bigmoney2019!",
+    database: "PetalPusher"
+})
 module.exports = (app) => {
-//   let adminId = new admin({employee_Id:"997226", employee_password:"petals"})
-//   adminId.save().then((savedAdmin)=>{
-//       console.log(savedAdmin)
-//   });
-
+    app.get('/admin/:id', (req, res)=>{
+        connection.query(`select * from admin where admin_id = ${connection.escape(admin_id)}`, (err, results)=>{
+            res.send(JSON.stringify(results[0]))
+        });
+    });
 
 
 app.post('/admin/logIn',  (req, res)=> {
     console.log(req.body);
     
-    admin.findOne({where:{employee_Id: req.body.employee_id}}, function(err, user){
-        if(err)console.log(err);
+  
         
     }).then((user, err)=>{
             if(!user){

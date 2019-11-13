@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Petal Pushers - Basket</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" type="image/jpg" href="images/basket.png">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Petal Pushers</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="sale.html" class="nav-link">On Sale</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+	<div class="block-30 block-30-sm item" style="background-image: url('images/lightbox_Marcus_Alan.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-10">
+					<span class="subheading-sm">order now</span>
+					<h2 class="heading">Select Your Blooms</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="block-22">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-md-9 text-center enter">
+					<h1 class="heading mb-4"><b>You Must Enter Your E-Mail Address To Order</b></h1>
+					<form action="#" class="subscribe">
+						<div class="form-group">
+							<input required type="email" class="email" id="e_mail" placeholder="Enter your email">
+							<!-- <button onclick="enterPromo(event)" type="submit" class="btn btn-primary submit"
+								id="subscribe">Subscribe & Order</button> -->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=========== Begin Order=========================================== -->
+	<section class="ftco-section ftco-cart">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 ftco-animate">
+					<div class="cart-list">
+						<table class="table">
+							<thead class="thead-primary">
+								<tr class="text-center">
+									<th>&nbsp;</th>
+									<th>Product</th>
+									<th>Color</th>
+									<th>Quantity</th>
+									<th>Price</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="text-center">
+									<!------------Rose---------------------->
+									<td class="image-prod">
+										<div>
+											<img src="images/70_rose_red_92974998.jpg" width="69" height="69"
+												alt="Roses" />
+										</div>
+									</td>
+
+									<td class="product-name">
+										<h3>Long Stem Rose</h3>
+										<p> Ullamcorper sit amet risus nullam eget. Nec ullamcorper sit amet risus. Justo nec ultrices dui sapien. Senectus et netus et malesuada fames ac turpis egestas integer.</p>
+									</td>
+									<td class="color">
+										<div class="input-group mb-3">
+											<select class="order-input" name="color-rose" id="color-rose">
+												<option value="---">Choose one</option>
+												<option value="Pink">Pink</option>
+												<option value="Peach">Peach</option>
+												<option value="White">White</option>
+												<option value="Yellow">Yellow</option>
+												<option value="Red">Red</option>
+											</select>
+										</div>
+					</div>
+					</td>
+					<td class="quantity">
+						<div class="input-group mb-3">
+							<input onchange="calcTotal(event)"type="number" name="rose" id="quantity1" class="quantity form-control input-number" value=""
+								min="0" max="100" data-value="3.90">
+						</div>
+					</td>
+
+					<td class="price">$3.90</td>
+					<td class="total quantity1"></td>
+
+					</tr><!-- END TR-->
+					<!------------calla lilly---------------------->
+					<tr class="text-center">
+						<td class="image-prod">
+							<div><img src="images/160_calla_blush_160337318.jpg" width="69" height="69"
+									alt="calla Lily" /></div>
+						</td>
+
+						<td class="product-name">
+							<h3>Calla Lilly</h3>
+							<p> Ullamcorper sit amet risus nullam eget. Nec ullamcorper sit amet risus. Justo nec ultrices dui sapien. Senectus et netus et malesuada fames ac turpis egestas integer.</p>
+						</td>
+						<td class="color">
+							<div class="input-group mb-3">
+								<select class="order-input user-input" name="color-calla-lilly" id="color-calla-lilly">
+									<option onclick="calcTotal(event)" value="---">Choose one</option>
+									<option onclick="calcTotal(event)" value="Blush">Blush</option>
+									<option onclick="calcTotal(event)" value="Yellow">Yellow</option>
+									<option onclick="calcTotal(event)" value="Pink">Pink</option>
+									<option onclick="calcTotal(event)" value="Purple">Purple</option>
+								</select>
+							</div>
+				</div>
+				</td>
+				<td class="quantity">
+					<div class="input-group mb-3">
+						<input onchange="calcTotal(event)"type="number" name="calla-lilly"id="quantity2"  class="quantity form-control input-number" value="" min="0"
+							max="100" data-value="2.90"/>
+					</div>
+				</td>
+
+				<td class="price">$2.90</td>
+				<td class="total quantity2"></td>
+
+				</tr><!-- END TR-->
+				<!------------sunflower---------------------->
+				<tr class="text-center">
+					<td class="image-prod">
+						<div> <img src="images/70_sunflower_146748795.jpg" width="69" height="69" alt="Sunflower" />
+						</div>
+					</td>
+
+					<td class="product-name">
+						<h3>Sunflower</h3>
+						<p> Ullamcorper sit amet risus nullam eget. Nec ullamcorper sit amet risus. Justo nec ultrices dui sapien. Senectus et netus et malesuada fames ac turpis egestas integer.</p>
+					</td>
+					<td class="color">
+							<div class="input-group mb-3">
+								<select class="order-input" name="color-sunflower" id="color-sunflower">
+									<option value="---">Choose one</option>
+									<option value="Brown/Yellow">Brown/Yellow</option>
+									<option value="White">White</option>
+									<option value="Yellow/Brown">Yellow/Brown</option>
+								</select>
+							</div>
+		</div>
+		</td>
+		<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="sunflower"id="quantity3"  class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="2.90"/>
+				</div>
+			</td>
+
+			<td class="price">$2.90</td>
+			<td class="total quantity3"></td>
+
+			</tr><!-- END TR-->
+			<!------------daffodil---------------------->
+			<tr class="text-center">
+				<td class="image-prod">
+					<div> <img src="images/70_daffodil_122442732.jpg" width="69" height="69" alt="Daffodil" /></div>
+				</td>
+
+				<td class="product-name">
+					<h3>Daffodil</h3>
+					<p>Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare.</p>
+				</td>
+				<td class="color">
+						<div class="input-group mb-3">
+							<select class="order-input" name="color-daffodil" id="color-daffodil">
+								<option value="---">Choose one</option>
+								<option value="Orange">Pink</option>
+								<option value="Peach">Peach</option>
+								<option value="White">White</option>
+								<option value="Yellow">Yellow</option>
+							</select>
+						</div>
+	</div>
+	</td>
+		<td class="quantity">
+			<div class="input-group mb-3">
+				<input onchange="calcTotal(event)"type="number" name="daffodil" id="quantity4" class="quantity form-control input-number" value="" min="0"
+					max="100" data-value="1.90"/>
+			</div>
+		</td>
+
+		<td class="price">$1.90</td>
+		<td class="total quantity4"></td>
+
+		</tr><!-- END TR-->
+		<!------------gerbera daisy---------------------->
+		<tr class="text-center">
+			<td class="image-prod">
+				<div><img src="images/70_gerbera_pink_146798391.jpg" width="69" height="69" alt="Gerbera Daisy" /></div>
+			</td>
+
+			<td class="product-name">
+				<h3>Gerbera Daisy</h3>
+				<p>Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare.</p>
+			</td>
+			<td class="color">
+				<div class="input-group mb-3">
+					<select class="order-input" name="color-gerbera-daisy" id="color-gerbera-daisy">
+						<option value="---">Choose one</option>
+						<option value="Purple">Purple</option>
+						<option value="Orange">Orange</option>
+						<option value="Pink">Pink</option>
+						<option value="Yellow">Yellow</option>
+					</select>
+				</div>
+				</div>
+			</td>
+
+			<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)" type="number" name="gerbera-daisy" id="quantity5" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="1.90" />
+				</div>
+			</td>
+
+			<td class="price">$1.90</td>
+			<td class="total quantity5"></td>
+
+		</tr><!-- END TR-->
+		<!------------dendrobium---------------------->
+		<tr class="text-center">
+			<td class="image-prod">
+				<div> <img src="images/70_dendrobium2_152158743.jpg" width="69" height="69" alt="Dendrobium" /></div>
+			</td>
+
+			<td class="product-name">
+				<h3>Dendrobium</h3>
+				<p>Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare.</p>
+			</td>
+			<td class="color">
+				<div class="input-group mb-3">
+
+					<select class="order-input" name="color-dendrobium" id="color-dendrobium">
+						<option value="---">Choose one</option>
+						<option value="Pink">Pink</option>
+						<option value="Peach">Peach</option>
+						<option value="White">White</option>
+						<option value="Yellow">Yellow</option>
+						<option value="Red">Red</option>
+					</select>
+				</div>
+				</div>
+			</td>
+			<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="dendrobium" id="quantity6" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="1.90"/>
+				</div>
+			</td>
+			<td class="price">$1.90</td>
+			<td class="total quantity6"></td>
+
+		</tr><!-- END TR-->
+		<tr class="text-center">
+			<!------------lilly---------------------->
+			<td class="image-prod">
+				<div> <img src="images/70_lily_pink_160102549.jpg" width="69" height="69" alt="Lilies" /></div>
+			</td>
+			<td class="product-name">
+				<h3>Lilly</h3>
+				<p> Ullamcorper sit amet risus nullam eget. Nec ullamcorper sit amet risus. Justo nec ultrices dui sapien. Senectus et netus et malesuada fames ac turpis egestas integer.</p>
+			</td>
+			<td class="color">
+				<div class="input-group mb-3">
+					<select class="order-input" name="color-lilly" id="color-lilly">
+						<option value="---">Choose one</option>
+						<option value="Pink">Pink</option>
+						<option value="Red">Red</option>
+						<option value="White">White</option>
+						<option value="Yellow">Yellow</option>
+						<option value="Orange">Orange</option>
+					</select>
+				</div>
+				</div>
+			</td>
+			<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="lilly" id="quantity7" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="1.90"/>
+				</div>
+			</td>
+			<td class="price">$1.90</td>
+			<td class="total quantity7"></td>
+		</tr><!-- END TR-->
+		<!------------tulip---------------------->
+		<tr class="text-center">
+			<td class="image-prod">
+				<div> <img src="images/70_tulip_purple_160910481.jpg" width="69" height="69" alt="Tulips" /></div>
+			</td>
+			<td class="product-name">
+				<h3>Tulip</h3>
+				<p> Ullamcorper sit amet risus nullam eget. Nec ullamcorper sit amet risus. Justo nec ultrices dui sapien. Senectus et netus et malesuada fames ac turpis egestas integer.</p>
+			</td>
+			<td class="product-color">
+				<div class="input-group mb-3">
+					<select class="order-input" name="color-tulip" id="color-tulip">
+						<option value="---">Choose one</option>
+						<option value="Purple">Purple</option>
+						<option value="White">White</option>
+						<option value="Yellow">Yellow</option>
+						<option value="Golden">Golden</option>
+						<option value="Pink">Pink</option>
+						<option value="Red">Red</option>
+					</select>
+				</div>
+				</div>
+			</td>
+			<td class="product-quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="tulip" id="quantity8" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="2.90">
+				</div>
+			</td>
+
+			<td class="product-price">$2.90</td>
+			<td class="product-total quantity8"></td>
+
+		</tr><!-- END TR-->
+		<!------------lilac---------------------->
+		<tr class="text-center">
+			<td class="image-prod">
+				<div> <img src="images//70_lilac_157045915.jpg" width="69" height="69" alt="Lilac" /></div>
+			</td>
+
+			<td class="product-name">
+				<h3>Lilac</h3>
+				<p>Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare.</p>
+			</td>
+			<td class="color">
+					<div class="input-group mb-3">
+						<select class="order-input" name="color-lilac" id="color-lilac">
+							<option value="---">Choose one</option>
+							<option value="Pink">Pink</option>
+							<option value="Lilac">Lilac</option>
+							<option value="White">White</option>
+						</select>
+					</div>
+</div>
+</td>
+
+			<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="lilac" id="quantity9" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="1.9">
+				</div>
+			</td>
+
+			<td class="price">$1.90</td>
+			<td class="total quantity9"></td>
+
+		</tr><!-- END TR-->
+		<!------------daisy---------------------->
+		<tr class="text-center">
+			<td class="image-prod">
+				<div> <img src="images/70_daisy_white_159207232.jpg" width="69" height="69" alt="Daisies" /></div>
+			</td>
+
+			<td class="product-name">
+				<h3>Daisy</h3>
+				<p>Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare.</p>
+			</td>
+			<td class="color">
+					<div class="input-group mb-3">
+						<select class="order-input" name="color-daisy" id="color-daisy">
+							<option value="---">Choose one</option>
+							<option value="Peach">Peach</option>
+							<option value="White">White</option>
+							<option value="Yellow">Yellow</option>
+						</select>
+					</div>
+</div>
+</td>
+
+			<td class="quantity">
+				<div class="input-group mb-3">
+					<input onchange="calcTotal(event)"type="number" name="daisy" id="quantity10" class="quantity form-control input-number" value="" min="0"
+						max="100" data-value="1.90">
+				</div>
+			</td>
+
+			<td class="price">$1.90</td>
+			<td class="total quantity10"></td>
+
+		</tr><!-- END TR-->
+		</tbody>
+		</table>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	<!-- arrangements & ferns----------------------- -->
+	<section class="ftco-section mt-5">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section ftco-animate text-center">
+					<span class="subheading">Finish Your Order</span>
+					<h2 class="mb-4">Choose A Vase</h2>
+					<p>Each selection comes nested in a beautiful arrangement with sprigs of baby breath minitures blooms and maidinhair fern sprigs. Instructions and plant food are included on how to care for your new arrangement.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="menu-entry">
+						<a href="#"><img src="images/200_white_red_tulips_160382424.jpg" /></a>
+						<div class="text text-center pt-4">
+							<h3 class="product-name">Elegant Glass Vase</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<p class="product-price"><span>$12.90</span></p>
+							<p data-type="glass" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="menu-entry">
+						<a href="#"><img src="images/200_colorful_gerbera_119722776.jpg"></a>
+						<div class="text text-center pt-4">
+							<h3 class="product-name">Stylish Ceramic Vase</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<p class="product-price"><span>$12.90</span></p>
+							<p data-type="ceramic" data-value="12.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="menu-entry">
+						<a href="#"><img src="images/200_tulips_in_boot_92034900.jpg"></a>
+						<div class="text text-center pt-4">
+							<h3 class="product-name">Unique Style Vase</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<p class="product-price"><span>$10.90</span></p>
+							<p data-type="unique style" data-value="10.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="menu-entry">
+						<a href="#"><img src="images/200_purple_daisy_rose104274224.jpg"></a>
+						<div class="text text-center pt-4">
+							<h3 class="product-name">Decorative Type Vase</h3>
+							<p>A small river named Duden flows by their place and supplies</p>
+							<p class="product-price"id="15.90"><span>$15.90</span></p>
+							<p data-type="decorative" data-value="15.90"onclick="chooseVase(event)" class="btn btn-primary btn-outline-primary">Add to Basket</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="row justify-content-start">
+		<div class="col col-lg-3 col-md-6 m-5 cart-wrap ftco-animate">
+			<div class="cart-total m-3">
+				<h3>Basket Totals</h3>
+				<p class="d-flex">
+					<span class="mr-5">Subtotal</span>
+					<span id="subtotal"></span>
+				</p>
+				<p class="d-flex">
+						<span class="mr-5">Vase</span>
+						<span id="vase"></span>
+					</p>
+				<p class="d-flex">
+					<span class="mr-5">Delivery</span>
+					<span id="delivery">Free</span>
+				</p>
+			
+				<hr>
+				<p class="d-flex total-price">
+					<span class="mr-5">Total</span>
+					<span id="total-price"></span>
+				</p>
+			</div>
+			<div class="col" id="totals"></div>
+			<p id="message"></p>
+			  <input type="submit" class="checkout float_right m-5" value="Proceed to Payment" onclick="orderIt(event)" />
+			  <input type="hidden" name="qty" value="1" />
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md-6 col-lg-6">
+					<h3 class="heading-section">About Us</h3>
+					<p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid. Atque dolore
+						esse veritatis iusto eaque perferendis non dolorem fugiat voluptatibus vitae error ad itaque
+						inventore accusantium tempore dolores sunt.</p>
+					<p><a href="#" class="btn btn-primary px-4">Top</a></p>
+				</div>
+				<div class="col-md-6 col-lg-6">
+					<div class="block-23">
+						<h3 class="heading-section">Contact Info</h3>
+						<ul>
+							<li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View,
+									San Francisco, California, USA</span></li>
+							<li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
+										210</span></a></li>
+							<li><a href="#"><span class="icon icon-envelope"></span><span
+										class="text">info@yourdomain.com</span></a></li>
+							<li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am -
+									5:00pm</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row pt-5">
+				<div class="col-md-12 text-center">
+					<p>
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This was made
+						with<i class="icon-heart" aria-hidden="true"></i>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" /></svg></div>
+
+
+				<script src="js/jquery.min.js"></script>
+				<script src="js/jquery-migrate-3.0.1.min.js"></script>
+				<script src="js/popper.min.js"></script>
+				<script src="js/bootstrap.min.js"></script>
+				<script src="js/jquery.easing.1.3.js"></script>
+				<script src="js/jquery.waypoints.min.js"></script>
+				<script src="js/jquery.stellar.min.js"></script>
+				<script src="js/owl.carousel.min.js"></script>
+				<script src="js/jquery.magnific-popup.min.js"></script>
+				<script src="js/bootstrap-datepicker.js"></script>
+				<script src="js/aos.js"></script>
+				<script src="js/jquery.animateNumber.min.js"></script>
+				<script src="js/main.js"></script> 
+
+
+</body>
+
+</html>

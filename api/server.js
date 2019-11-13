@@ -2,11 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const PORT = 7000;
-const cors = require('cors');
 const path = require('path');
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
-app.use(cors())
 require('./routes/admin.route')(app)
 require('./routes/order.route')(app)
 require('./routes/payment.route')(app)
@@ -14,7 +12,7 @@ require('./routes/purchasingOrder.route')(app)
 
 
 // serving static files ---------->
-const publicRoot = path.join(__dirname,'../','client');
+const publicRoot = path.join(__dirname,'client');
 app.use(express.static(publicRoot));
 app.get("/", (req, res) => {
     res.sendFile(publicRoot + '/index.html')
