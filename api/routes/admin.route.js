@@ -1,4 +1,7 @@
 const mysql = require('mysql');
+
+// create connection to database
+// the mysql.createConnection function takes in a configuration object which contains host, user, password and the database name.
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -7,6 +10,8 @@ const connection = mysql.createConnection({
 })
 module.exports = (app) => {
     app.get('/admin/:id', (req, res)=>{
+        let admin_id = "SELECT * FROM `admin` WHERE admin_id ='" + password + "'";
+        
         connection.query(`select * from admin where admin_id = ${connection.escape(admin_id)}`, (err, results)=>{
             res.send(JSON.stringify(results[0]))
         });

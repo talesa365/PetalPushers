@@ -291,15 +291,15 @@ $(document).ready(function ($) {
 	});
 
 });
-// =============================================================================
+// ======================================================================
 // Loading Purchasing Order
-//==============================================================================
+//=======================================================================
 function getOrders() {
 
 	let authed = window.localStorage.getItem("authed");
 	if (authed) {
 
-		fetch('http://www.localhost:7000/purchasingOrder').then(res => res.json()).then(orders => {
+		fetch('http://www.localhost:7000/purchaseOrder').then(res => res.json()).then(orders => {
 			console.log(orders);
 
 			let table = document.getElementById("order-table")
@@ -369,24 +369,24 @@ function getOrders() {
 		return button;
 	}
 }
-//==============================================================================
+//======================================================================
 // flashing sale
-// =============================================================================
+// =====================================================================
 function flash(t) {
 	$("#jump").fadeIn(1000).fadeOut(1500);
 	setTimeout("flash ()", t);
 }
-//==============================================================================
+//=======================================================================
 // ADMINISTRATION FETCH
-// =============================================================================
+// =====================================================================
 function checkId(e) {
 	e.preventDefault()
-	let employee_id = document.getElementById("employee_id");
-	let employee_password = document.getElementById("employee_password");
+	let admin_id = document.getElementById("admin_id");
+	let password = document.getElementById("password");
 
 	let payload = {
-		employee_id: employee_id.value,
-		employee_password: employee_password.value
+		admin_id: admin_id.value,
+		password: password.value
 	}
 
 	payload = JSON.stringify(payload)
@@ -394,7 +394,6 @@ function checkId(e) {
 
 	fetch('http://localhost:7000/admin/logIn', {
 		method: 'POST',
-		mode: "cors",
 		headers: {
 			"content-type": "application/json",
 			payload: payload
@@ -405,9 +404,9 @@ function checkId(e) {
 			res.json()
 		).then((res) => {
 			console.log(res)
-			employee_id.value = ""
-			employee_password.value = ""
-			window.localStorage.setItem("admin", res.employee_Id);
+			admin_id.value = ""
+			password.value = ""
+			window.localStorage.setItem("admin", res.admin_Id);
 			window.localStorage.setItem("authed", res.auth);
 			let authed = window.localStorage.getItem('authed')
 			if (authed) {
@@ -418,18 +417,20 @@ function checkId(e) {
 		}
 		)
 };
-// =============================================================================
+// ======================================================================
 // Order Calculate Function
-// =============================================================================
+// =====================================================================
 function chooseVase(e){
 	e.preventDefault();
 	let type = e.target.dataset.type
-	let value = e.target.dataset.value;
+	// let value = e.target.dataset.value;
 	let vase = document.getElementById("vase");
-	vase.innerText = `$${value}`
+	// vase.innerText = `$${value}`
+	vase.innerText = "order 6 or more to recieve a free vase"
 	order["vase"] = type
 }
-	// =======================calculate cost==================================
+// ===============calculate cost==================================
+// calculating cost and qty of boquet order
 function calcTotal(e) {
 		let target = e.target;
 		let color = document.getElementById(`color-${e.target.name}`).value
@@ -441,7 +442,6 @@ function calcTotal(e) {
 		let subtotal = document.getElementById("subtotal");
 		let checkoutTotal = document.getElementById("total-price");
 		let total = target.value * target.dataset.value;
-		let vase = document.getElementsByClassName("vaseType");
 		let currentTotal = 0;
 		rowTotal.innerText = `$${total.toFixed(2)}`;
 		for (let i = 0; i < values.length; i++) {
@@ -452,21 +452,15 @@ function calcTotal(e) {
 		
 	
 		subtotal.innerText = `$${currentTotal.toFixed(2)}`;
-		checkoutTotal.innerText = `$${currentTotal}0`;
+		checkoutTotal.innerText = `$${currentTotal.toFixed(2)}`;
 	
-		if(target.value >= 5){
+		if(target.value >= 6){
 			vase.innerText = "Free with purchase"
-		}else {
-			vase = `${vase}`.value	
-			checkoutTotal.innerText = `$${currentTotal + vase}0`;
 		}
-
-	
-	
 }
-//==============================================================================
+//======================================================================
 // ORDER FETCH
-// =============================================================================
+// ======================================================================
 function orderIt(e) {
 	e.preventDefault();
 	let order_id = document.getElementById("e_mail").value
@@ -497,55 +491,10 @@ function orderIt(e) {
 		document.getElementById("message").innerText = "Please Enter An Email Address";
 	}
 }
-//==============================================================================
-// PAYMENT FETCH
-// =============================================================================
-function payForIt(e) {
-	e.preventDefault()
-	var modal = document.getElementById("myModal")
-	modal.classList.remove("hidden")
-	let checkout_total = window.localStorage.getItem("checkout_total")
-	let order_id = window.localStorage.getItem("order_id")
-	let payload = {
-		order_id: order_id,
-		checkout_total: checkout_total
-	}
-	let userInput = document.getElementsByTagName("input")
-	for (let i = 0; i < userInput.length; i++) {
-		let input = userInput[i]
-		if (input.type === "radio") {
-			if (input.radio) {
-				payload[input.id] = input.checked
-			}
-		} else {
-			payload[input.id] = input.value
-		}
-	}
 
-	console.log(payload)
-	payload = JSON.stringify(payload)
-	// sending the HTTP POST req along w/ form data to node server
-	fetch('http://localhost:7000/payment/add', {
-		method: 'POST',
-		mode: "cors",
-		headers: {
-			"content-type": 'application/json',
-			"accounts": payload
-
-		},
-		body: payload
-	})
-		.then((res) =>
-			res.json()
-		).then((data) => {
-			window.localStorage.removeItem("order_id")
-			
-		});
-
-};
-// =============================================================================
+// /=====================================================================
 // LOG OUT
-// =============================================================================
+// ======================================================================
 function logMeOut(e) {
 	window.localStorage.removeItem("order_id");
 	window.localStorage.removeItem("admin");

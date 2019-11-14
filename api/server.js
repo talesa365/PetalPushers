@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 require('./routes/admin.route')(app)
 require('./routes/order.route')(app)
 require('./routes/payment.route')(app)
-require('./routes/purchasingOrder.route')(app)
+require('./routes/purchaseOrder.route')(app)
 
 
 // serving static files ---------->
@@ -27,7 +27,7 @@ app.get("/payment", (req, res) => {
     res.sendFile(publicRoot + '/payment.html')
 });
 app.get('/purchasingOrder', (req,res) => {
-    res.sendFile(publicRoot + '/purchasingOrder.html')
+    res.sendFile(publicRoot + '/purchaseOrder.html')
 });
 app.get('/*', (req, res) => {
     res.sendFile(publicRoot + '/404.html')

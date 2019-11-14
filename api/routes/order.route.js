@@ -1,4 +1,4 @@
-// const order = require('../sequelize').order
+// The first step of the process is to establish a connection with the database.
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: "localhost",

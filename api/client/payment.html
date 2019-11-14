@@ -72,11 +72,11 @@
   <table class="mx-auto" id="order-table">
     <tr>
       <th class="thead">Bloom Name</th>
-      <th class="thead"> Color &</th>
+      <th class="thead"> Color&</th>
       <th class="thead"> Qty</th>
-      <p  id="vaseType"></p>
     </tr>
   </table>
+  <p id="vaseType"></p>
   <section class="ftco-section m-5">
     <div class="container">
       <div class="row">
@@ -87,20 +87,20 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="first_name">*First Name</label>
-                  <input type="text" id="first_name" class="form-control" placeholder="">
+                  <input required type="text" id="first_name" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="lastname">*Last Name</label>
-                  <input type="text" id="last_name" class="form-control" placeholder="">
+                  <input required type="text" id="last_name" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="w-100"></div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="streetAddress">*Street Address</label>
-                  <input type="text" id="address" class="form-control" placeholder="House number and street name">
+                  <input required type="text" id="address" class="form-control" placeholder="House number and street name">
                 </div>
               </div>
               <div class="col-md-6">
@@ -112,33 +112,32 @@
               <div class="w-100"></div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="towncity">Town / City</label>
-                  <input type="text" id="city" class="form-control" placeholder="">
+                  <label for="towncity">*Town / City</label>
+                  <input required type="text" id="city" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="state">State</label>
-                  <input type="text" id="state" class="form-control" placeholder="">
+                  <label for="state">*State</label>
+                  <input required type="text" id="state" class="form-control" placeholder="">
                 </div>
               </div>
               <div class="w-100"></div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="postcodezip">Postcode / ZIP *</label>
-                  <input type="text" id="zip_code" class="form-control" placeholder="">
+                  <label for="postcodezip">*Postcode / ZIP</label>
+                  <input required type="text" id="zip_code" class="form-control" placeholder="">
                 </div>
               </div>
               
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="phone">*Phone</label>
-                  <input type="text" id="phone" class="form-control" placeholder="">
+                  <input required type="text" id="phone" class="form-control" placeholder="">
                 </div>
               </div>
             </div>
             <h3 class="mb-4 billing-heading text-center">Shipping Details</h3>
-            <p class="mb-4 billing-heading text-center">please fill out if billling and shipping addresses are different</p>
             <div class="row align-items-end">
                 <div class="w-100"></div>
                 <div class="col-md-6">
@@ -175,30 +174,7 @@
                 </div>
               </div>
           </form><!-- END Billing & shipping Form--------------------->
-          <form><!--Basket total form--------------------------->
-          <div class="row mt-5 ml-5 pt-4 ">
-            <div class="col-md-5 pt-2">
-              <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4">
-                <h3 class="billing-heading mb-4">Basket Total<img class="m-0" src="images/basket.png"></h3>
-                <p class="d-flex">
-                  <span>Subtotal</span>
-                  <span id="sub_total"></span>
-                </p>
-                <p class="d-flex">
-                  <span>Delivery</span>
-                  <span class="ml-5"id="delivery">Free</span>
-                </p>
-                <p class="d-flex">
-                  <span>Discount</span>
-                  <span id="discount"></span>
-                </p>
-                <hr>
-                <p class="d-flex total-price p-2">
-                  <span>Total</span>
-                  <span id="total"></span>
-                </p>
-              </div>
-            </div><!--End Basket total----------------------->
+
             <div class="col-md-7">
               <div class="col-md-11 ml-3 pt-2">
                 <div class="cart-detail ftco-bg-dark p-3 p-md-4">
@@ -206,7 +182,7 @@
                   <div class="form-group">
                     <div class="col-md-12">
                       <div class="radio">
-                        <label><input type="radio" id="bankTransfer" name="optradio" class="mr-2"> Direct Bank
+                        <label><input type="radio" id="bankTransfer" name="optradio" class="mr-2 form-control"> Direct Bank
                           Tranfer</label>
                       </div>
                     </div>
@@ -214,21 +190,21 @@
                   <div class="form-group">
                     <div class="col-md-12">
                       <div class="radio">
-                        <label><input type="radio" id="checkPay" name="optradio" class="mr-2"> Check Payment</label>
+                        <label><input type="radio" id="checkPay" name="optradio" class="mr-2 form-control"> Check Payment</label>
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-md-12">
                       <div class="radio">
-                        <label><input type="radio" id="payPal" name="optradio" class="mr-2"> Paypal</label>
+                        <label><input type="radio" id="payPal" name="optradio" class="mr-2 form-control"> Paypal</label>
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-md-12">
                       <div class="radio">
-                        <label><input type="radio" id="pickUp" name="optradio" class="mr-2"> Pick Up</label>
+                        <label><input type="radio" id="pickUp" name="optradio" class="mr-2 form-control"> Pick Up</label>
                       </div>
                     </div>
                   </div>
@@ -238,8 +214,11 @@
           </div> <!-- .col-md-8 -->
         </form>
           <div class="col">
-            <input type="submit" class="checkout float_right m-5" value="Submit Payment"  onclick="submitPayment(event)" />
+            <input type="submit" class="checkout float_right m-5" data-toggle="modal" data-target="#myModal"
+            value="Submit Payment"  onclick="submitPayment(event)" />
             <p id="message"></p>
+            <p id="message2"></p>
+
           </div>
         </div>
       </div>
@@ -251,6 +230,8 @@
     </div>
   </section>
   <!--section--->  
+ 
+
   <footer class="footer">
       <div class="container">
         <div class="row mb-5">
