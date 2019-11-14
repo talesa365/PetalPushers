@@ -392,7 +392,7 @@ function checkId(e) {
 	payload = JSON.stringify(payload)
 	console.log(payload);
 
-	fetch('http://localhost:7000/admin/logIn', {
+	fetch('http://localhost:7000/admin/', {
 		method: 'POST',
 		headers: {
 			"content-type": "application/json",
@@ -403,18 +403,23 @@ function checkId(e) {
 		.then((res) =>
 			res.json()
 		).then((res) => {
+			if(res.err){
+				let message = document.getElementById("message3");
+				message.innerText = "The username of Password has not been authorized"
+			}else{
 			console.log(res)
 			admin_id.value = ""
 			password.value = ""
-			window.localStorage.setItem("admin", res.admin_Id);
-			window.localStorage.setItem("authed", res.auth);
+			window.localStorage.setItem("admin", res.admin_id);
+			window.localStorage.setItem("authed", 'true');
 			let authed = window.localStorage.getItem('authed')
 			if (authed) {
 				console.log("loggedIn")
 				$('.hide').removeClass('hide')
+				$('#message3').addClass('hide')
 
 			}
-		}
+		}}
 		)
 };
 // ======================================================================
