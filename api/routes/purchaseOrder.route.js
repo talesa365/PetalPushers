@@ -7,9 +7,12 @@ const connection = mysql.createConnection({
 })
 module.exports = (app) => {
 
-    app.get('/purchaseOrder/:id', (req, res)=>{
-        connection.query(`select * from orders where order_id = ${connection.escape(orders)}`, (err, results)=>{
-            res.send(JSON.stringify(results[0]))
+    app.get('/purchaseOrder', (req, res)=>{
+        connection.query(`select * from orders `, (err, results)=>{
+            
+            res.send(JSON.stringify(results))
+            console.log(results);
         });
     });
 }
+   

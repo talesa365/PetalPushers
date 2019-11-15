@@ -1,8 +1,11 @@
 const order = {};
-let purchasingOrder = document.getElementById("purchasing-order");
-if (purchasingOrder) {
-	purchasingOrder.onload = getOrders();
+let purchaseOrder = document.getElementById("purchase-order");
+if (purchaseOrder) {
+	purchaseOrder.onload = getOrders();
 }
+let vaseTotal = 0;
+let flowerTotal = 0;
+let combinedAmount = 0;
 AOS.init({
 	duration: 800,
 	easing: 'slide'
@@ -297,9 +300,18 @@ $(document).ready(function ($) {
 function getOrders() {
 
 	let authed = window.localStorage.getItem("authed");
+
 	if (authed) {
 
-		fetch('http://www.localhost:7000/purchaseOrder').then(res => res.json()).then(orders => {
+		fetch('http://localhost:7000/purchaseOrder',{
+			method: 'GET',
+			headers: {
+				"content-type": "application/json"
+				
+			}
+			
+		}).then(res => res.json())
+		.then(orders => {
 			console.log(orders);
 
 			let table = document.getElementById("order-table")
@@ -309,6 +321,7 @@ function getOrders() {
 				let order = document.createElement("td");
 				let total = document.createElement("td");
 				order_id.innerText = orders[i].order_id;
+			
 				order.appendChild(makeModal(orders[i]))
 				row.appendChild(order_id);
 				row.appendChild(order);
@@ -318,6 +331,7 @@ function getOrders() {
 			}
 		})
 	}
+		
 	function makeModal(orderEle) {
 		console.log(orderEle);
 
@@ -428,11 +442,16 @@ function checkId(e) {
 function chooseVase(e){
 	e.preventDefault();
 	let type = e.target.dataset.type
-	// let value = e.target.dataset.value;
+	let value = e.target.dataset.value;
 	let vase = document.getElementById("vase");
-	// vase.innerText = `$${value}`
-	vase.innerText = "order 6 or more to recieve a free vase"
-	order["vase"] = type
+	vaseTotal = value;
+	vaseTotal = Number(value);
+	console.log(vaseTotal);
+	
+	vase.innerText = `$${value}`
+	// vase.innerText = "order 6 or more Blooms to recieve a free vase"
+	order["vase"] = type;
+	combinedTotal();
 }
 // ===============calculate cost==================================
 // calculating cost and qty of boquet order
@@ -455,35 +474,47 @@ function calcTotal(e) {
 			currentTotal += +rowT 
 		}
 		
-	
+		flowerTotal = currentTotal.toFixed(2);
 		subtotal.innerText = `$${currentTotal.toFixed(2)}`;
 		checkoutTotal.innerText = `$${currentTotal.toFixed(2)}`;
 	
 		if(target.value >= 6){
 			vase.innerText = "Free with purchase"
 		}
+		combinedTotal();
+}
+
+
+function combinedTotal(){
+	let checkoutTotal = document.getElementById("total-price");
+	console.log(vaseTotal);
+	console.log(flowerTotal);
+	combinedAmount = Number(vaseTotal) + Number(flowerTotal);
+	checkoutTotal.innerText = `$${combinedAmount.toFixed(2)}`;
 }
 //======================================================================
 // ORDER FETCH
 // ======================================================================
 function orderIt(e) {
 	e.preventDefault();
+	let balance = `$${combinedAmount.toFixed(2)}`
 	let order_id = document.getElementById("e_mail").value
 	if(order_id){
 		window.localStorage.setItem("order_id", order_id)
-		let o = {
+		let customerOrder = {
 			"order_id" : order_id,
-			order: order
+			 order: order,
+			 "balance": balance
 		}	
+	console.log(customerOrder);
 	
 		fetch('http://localhost:7000/order/add', {
 			method: 'POST',
-			mode: "cors",
 			headers: {
 				"content-type": "application/json",
-				payload: JSON.stringify(o)
+				payload: JSON.stringify(customerOrder)
 			},
-			body: JSON.stringify(o)
+			body: JSON.stringify(customerOrder)
 		}).then(data => {
 			console.log(data);
 			inputs = " "

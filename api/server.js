@@ -26,7 +26,7 @@ app.get("/order", (req, res) => {
 app.get("/payment", (req, res) => {
     res.sendFile(publicRoot + '/payment.html')
 });
-app.get('/purchasingOrder', (req,res) => {
+app.get('/purchaseOrder', (req,res) => {
     res.sendFile(publicRoot + '/purchaseOrder.html')
 });
 app.get('/*', (req, res) => {
