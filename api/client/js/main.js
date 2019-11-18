@@ -6,6 +6,7 @@ if (purchaseOrder) {
 let vaseTotal = 0;
 let flowerTotal = 0;
 let combinedAmount = 0;
+
 AOS.init({
 	duration: 800,
 	easing: 'slide'
@@ -298,43 +299,40 @@ $(document).ready(function ($) {
 // Loading Purchasing Order
 //=======================================================================
 function getOrders() {
-
 	let authed = window.localStorage.getItem("authed");
-
 	if (authed) {
-
 		fetch('http://localhost:7000/purchaseOrder',{
 			method: 'GET',
 			headers: {
 				"content-type": "application/json"
-				
 			}
-			
 		}).then(res => res.json())
 		.then(orders => {
 			console.log(orders);
-
 			let table = document.getElementById("order-table")
 			for (let i = 0; i < orders.length; i++) {
 				let row = document.createElement("tr");
 				let order_id = document.createElement("td");
 				let order = document.createElement("td");
-				let total = document.createElement("td");
+				let balance = document.createElement("td");
+				let paymentId = document.createElement("td");
 				order_id.innerText = orders[i].order_id;
-			
+				balance.innerText = orders[i].balance;
+				paymentId.innerText = orders[i].paymentId;
 				order.appendChild(makeModal(orders[i]))
 				row.appendChild(order_id);
 				row.appendChild(order);
-				row.appendChild(total);
+				row.appendChild(balance);
+				row.appendChild(paymentId);
 				table.appendChild(row);
-
 			}
 		})
 	}
-		
+	
+}
 	function makeModal(orderEle) {
-		console.log(orderEle);
-
+		let {bouquet} = orderEle;
+		bouquet = JSON.parse(bouquet);
 		let table = document.createElement("table");
 		let tr = document.createElement("tr");
 		let th1 = document.createElement("th");
@@ -346,28 +344,35 @@ function getOrders() {
 		tr.appendChild(th1);
 		tr.appendChild(th2);
 		tr.appendChild(th3);
-		table.appendChild(tr)
-
-		for (const prop in orderEle) {
+		table.appendChild(tr);
+		for (const prop in bouquet) {
 			console.log(prop);
+			if(prop !== "vase"){
 			let tr = document.createElement("tr")
 			let td1 = document.createElement("td")
-			let td2 = document.createElement("td")
-			let td3 = document.createElement("td")
+			td1.innerText = prop;
+			let td2 = document.createElement("td");
+			td2.innerText = bouquet[prop]["color"];
+			let td3 = document.createElement("td");
+			td3.innerText = bouquet[prop]["number"]
 			tr.appendChild(td1)
 			tr.appendChild(td2)
 			tr.appendChild(td3)
-			if (typeof +orderEle[prop] === "number" && +orderEle[prop] > 0) {
-				td3.innerText = +orderEle[prop]
+			// if (typeof +bouquet[prop] === "number" && +bouquet[prop] > 0) {
+			// 	td3.innerText = +bouquet[prop]
 
-			}
+			// }
 			table.appendChild(tr)
 			// console.log(orderEle[prop]);				
+			}
 		}
+		let p = document.createElement("p");
+		p.innerText = bouquet.vase? `order includes:${bouquet.vase} vase`: "";
 		let button = document.createElement("button");
 		let modal = document.createElement("div");
 		modal.innerHTML = "<h3>Orders</h3>";
-		modal.appendChild(table)
+		table.appendChild(p)
+		modal.appendChild(table);
 		modal.classList.add("hidden");
 
 		button.onclick = (e) => {
@@ -382,7 +387,6 @@ function getOrders() {
 		button.appendChild(modal)
 		return button;
 	}
-}
 //======================================================================
 // flashing sale
 // =====================================================================
@@ -439,19 +443,30 @@ function checkId(e) {
 // ======================================================================
 // Order Calculate Function
 // =====================================================================
+
 function chooseVase(e){
 	e.preventDefault();
-	let type = e.target.dataset.type
+	let type = e.target.dataset.type	
 	let value = e.target.dataset.value;
 	let vase = document.getElementById("vase");
+			if(type){
+				$("#vaseHidden").removeClass("hidden");
+				$("#removeVase").removeClass("hidden");
+			}
 	vaseTotal = value;
 	vaseTotal = Number(value);
 	console.log(vaseTotal);
-	
 	vase.innerText = `$${value}`
 	// vase.innerText = "order 6 or more Blooms to recieve a free vase"
 	order["vase"] = type;
 	combinedTotal();
+	
+
+}
+function removeVase(e){
+	vase.innerText = "";
+	$("#removeVase").addClass("hidden");
+	$("#vaseHidden").addClass("hidden");
 }
 // ===============calculate cost==================================
 // calculating cost and qty of boquet order

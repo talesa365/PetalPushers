@@ -31,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: mystery quest,"Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -427,7 +427,7 @@ samp {
 
 code {
   font-size: 87.5%;
-  color: #3cfc62;
+  color: #362943;
   word-break: break-word; }
   a > code {
     color: inherit; }
@@ -9128,8 +9128,7 @@ a.checkout, input.checkout {
 img{
 margin-right: 1rem;
 margin-top: 1rem;
-}
-
+} 
 li{
   list-style: none;
 }
@@ -9157,6 +9156,35 @@ li{
   font-size: 1.5rem;
  
 }
+.cart-detail{
+  border: 2px solid rgb(100, 231, 139);
+}
+.billing-form{
+  border: 2px solid rgb(100, 231, 139);
+}
+i{
+  position: relative;
+  padding: .15rem;
+ 
+ 
+}
+/* .underDiv{
+  overflow:hidden;
+  width:50px;
+  height:150px;
+  background-color:#FF00FF;
+  position:relative;
+  z-index:1;
+  }
+  .overflowDiv{
+    z-index:4;
+    position:absolute;
+    left:25px;
+    top:25px;
+    height:50px;
+    width:50px;
+    background-color:#00FF00;
+    } */
 .order-table {
   table-layout: fixed;
   width: auto;
@@ -9171,4 +9199,8 @@ li{
 }
 .hide{
   display: none;
+}
+.body{
+ background-image: url(../images/bloom.png);
+ 
 }

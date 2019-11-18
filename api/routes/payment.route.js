@@ -30,6 +30,7 @@ module.exports = (app) => {
                         }
                         connection.query(`update orders set paymentId = ${results.insertId} where id = ${orders[0].id}`, (err, updated)=>{
                             if(err){
+                                res.send(JSON.stringify({message:"Please Fill In All Fields"}))
                                 console.log(err)
                             }else{
                                 res.send(JSON.stringify({message:"Payment Successfully Submitted"}))
