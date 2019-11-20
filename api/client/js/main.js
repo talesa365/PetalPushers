@@ -512,7 +512,7 @@ function combinedTotal(){
 // ======================================================================
 function orderIt(e) {
 	e.preventDefault();
-	let balance = `$${combinedAmount.toFixed(2)}`
+	let balance = combinedAmount.toFixed(2)
 	let order_id = document.getElementById("e_mail").value
 	if(order_id){
 		window.localStorage.setItem("order_id", order_id)

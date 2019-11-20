@@ -60,10 +60,11 @@ function submitPayment(e){
 		} else {
             if(input.value){
             payload[input.id] = input.value
-            }else {
-                let message = document.getElementById("message2");
-                message.innerText = "please fill in all fields"
-            } 
+            }
+            // else {
+            //     let message = document.getElementById("message2");
+            //     message.innerText = "please fill in all fields"
+            // } 
 		}
     }
     

@@ -17,8 +17,9 @@ module.exports = (app) => {
     app.post('/order/add', (req, res)=>{
         console.log(req.body);
         const {order_id, order, balance} = req.body
-        let b = balance.slice(1)
-        console.log("this is b",b);
+        let orderBalance = balance;
+        
+        console.log("this is b",orderBalance);
         
         // let order_id = req.body.order_id
         connection.query(`select * from orders where order_id = `+ connection.escape(order_id) + ` and paymentId is null`, (err, results)=>{
@@ -29,7 +30,7 @@ module.exports = (app) => {
                 let vals = {
                     order_id: order_id,
                     bouquet: JSON.stringify(order),
-                    balance: +b
+                    balance: orderBalance
                 }
                 connection.query(`insert into orders set ?`, vals, (err, results)=>{
                     

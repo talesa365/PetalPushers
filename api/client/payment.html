@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Petal Pushers - Basket</title>
+  <title>Petal Pushers - Payment</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -70,7 +70,7 @@
       </div>
     </div> -->
   <!-- Billing form------------------------------------------- -->
-  <h2 class="text-center orderH2">Whats in Your Basket</h2><hr>
+  <h2 class="text-center orderH2">What's in Your Basket</h2><hr>
   <table class="mx-auto" id="order-table">
     <tr>
       <th class="thead">Bloom Name</th>
@@ -141,7 +141,7 @@
             </div>
             <!--shipping details-->
             <h3 class="mb-4 billing-heading text-center">Shipping Details</h3>
-            <p class="text-center">please enter same in the fields below if same as billing</p>
+            <p class="text-center text-success">please enter same in the fields below if same as billing</p>
             <div class="row">
                 <div class="w-100"></div>
                 <div class="col-md-6">
@@ -179,21 +179,21 @@
               </div>
           </form><!-- END Billing & shipping Form--------------------->
 
-          <div class="row m-5 p-3 d-flex">
+          <div class="row m-5 p-3">
             <div class="col-md-6">
               <div class="cart-detail ftco-bg-dark p-3 p-md-4">
                 <h3 class="billing-heading mb-4">*Payment Method</h3>
                 <div class="form-group">
                   <div class="col-md-12">
                     <div class="radio">
-                       <label><input type="radio" name="optradio" class="mr-2" id="vise"><i class="fa fa-cc-visa fa-2x"></i> Visa</label>
+                       <label><input type="radio" name="optradio" class="mr-2" id="visa"><i class="fa fa-cc-visa fa-2x"></i> Visa</label>
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-md-12">
                     <div class="radio">
-                       <label><input type="radio" name="optradio" class="mr-2" id="mastercard"><i class="fa fa-cc-mastercard fa-2x"></i> Check Payment</label>
+                       <label><input type="radio" name="optradio" class="mr-2" id="mastercard"><i class="fa fa-cc-mastercard fa-2x"></i> Mastercard</label>
                     </div>
                   </div>
                 </div>
@@ -223,24 +223,24 @@
             <!--end payment method--------------------->
             <div class="col-md-6  d-flex">
               <div class="cart-detail cart-total ftco-bg-dark p-3 p-md-4 hidden" id="cardHidden">
-                <h3 class="billing-heading">*Card Details</h3>
+                <h3 class="billing-heading mb-4">*Card Details</h3>
                 <div class="w-100"></div>
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label for="account">*Account Number</label>
-                    <input type="number" id="Account Number" class="form-control" >
+                    <label for="account">*Card Account Number</label>
+                    <input type="text" id="account_number" class="form-control" >
                   </div>
                   <div class="w-100"></div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="towncity">*Fcc Number</label>
-                      <input type="number" id="fcc_number" class="form-control" >
+                      <label for="towncity">*cvv Number</label>
+                      <input type="text" id="cvv_number" class="form-control" >
                     </div>
                     <div class="w-100"></div>
-                    <div class="col-md-">
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label for="towncity">*Expiration Date</label>
-                        <input type="number" id="expiration_date" class="form-control">
+                        <input type="text" id="expiration_date" class="form-control">
                       </div>
                     </div>
               </div>

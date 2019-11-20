@@ -2,9 +2,9 @@ DROP DATABASE If EXISTS PetalPusher;
 CREATE DATABASE PetalPusher;
 
 USE PetalPusher;
-create table orders (id int auto_increment, order_id varchar(255), paymentId varchar(255), bouquet varchar(255), balance int(11), PRIMARY KEY(id));
+create table orders (id int auto_increment, order_id varchar(255), paymentId varchar(255), bouquet varchar(255), balance float(4,2), PRIMARY KEY(id));
 
-create table payments (id int auto_increment, order_id varchar(255) NOT NULL, first_name varchar(255) NOT NULL, last_name varchar(255) NOT NULL, address varchar(255) NOT NULL, apart varchar(255), city varchar(255) NOT NULL, state varchar(255) NOT NULL, zip_code int(11) NOT NULL, phone varchar(255) NOT NULL,  shipping_address varchar(255), shipping_apart varchar(255), shipping_city varchar(255), shipping_state varchar(255), shipping_zip_code int(11),  payment varchar(255), primary key(id));
+create table payments (id int auto_increment, order_id varchar(255) NOT NULL, first_name varchar(255) NOT NULL, last_name varchar(255) NOT NULL, address varchar(255) NOT NULL, apart varchar(255), city varchar(255) NOT NULL, state varchar(255) NOT NULL, zip_code int(11) NOT NULL, phone varchar(255) NOT NULL,  shipping_address varchar(255), shipping_apart varchar(255), shipping_city varchar(255), shipping_state varchar(255), shipping_zip_code int(11),  payment varchar(255),account_number varchar(255), cvv_number int(11), expiration_date int(11),primary key(id));
 
 
 
