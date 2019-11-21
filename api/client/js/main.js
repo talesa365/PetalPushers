@@ -553,3 +553,16 @@ function logMeOut(e) {
 	window.location.reload()
 	window.location = "http://localhost:7000/index.html"
 };
+// ==============================================================
+// Google API
+// =============================================================
+function getDirections(e){
+	let startingAddress = document.getElementById("starting_address").value;
+	let endingAddress = document.getElementById("ending_address").value;
+	let message = document.getElementById("message");
+	console.log(startingAddress);
+	
+	if(startingAddress && endingAddress){
+		message.innerText = "Congratulations you are withing delivery distance of our FTD florist"
+	}
+}

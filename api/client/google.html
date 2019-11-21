@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Search</title>
+    <link rel="shortcut icon" type="image/jpg" href="images/google_map_icon.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-12 background">  
+            <h1 class="col-10 m-5 text-center"id="google">Google</h1>
+        </div><!--background-->
+        <!--background-->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item text-primary">All</li>
+            <li class="list-inline-item ">Street View</li>
+            <li class="list-inline-item ">Traffiv View</li>
+            <li class="list-inline-item ">Satellite View</li>
+        </ul>
+        <div id="jump">
+        <h3 class="text-center text-danger" id="message"></h3>
+    </div>
+        <div class="row m-2">
+            <div class="col-4 mt-5 pt-5 googleForm">
+                <div class="form-group">
+                    <label for="usr">Starting Address:</label>
+                    <input type="text" class="form-control" id="starting_address">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">City, State & Zip Code:</label>
+                    <input type="text" class="form-control" id="starting_csz">
+                </div>
+                <div class="form-group mt-5 pt-5">
+                    <label for="usr">Ending Address:</label>
+                    <input type="text" class="form-control" id="ending_address">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">City, State & Zip Code:</label>
+                    <input type="text" class="form-control" id="ending_csz">
+                </div>
+                <button class="btn-primary mt-5" onclick="getDirections(event)">Get Directions</button>
+            </div>
+            <div class="col-8 mt-4">
+                <img class="col-12 map" src="./images/googleMap.png">
+            </div>
+        </div>
+        <!--row-->
+    </div>
+    <!--container-->
+  
+          <script src="js/jquery.min.js"></script>
+          <script src="js/jquery-migrate-3.0.1.min.js"></script>
+          <script src="js/popper.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/jquery.easing.1.3.js"></script>
+          <script src="js/jquery.waypoints.min.js"></script>
+          <script src="js/jquery.stellar.min.js"></script>
+          <script src="js/owl.carousel.min.js"></script>
+          <script src="js/jquery.magnific-popup.min.js"></script>
+          <script src="js/bootstrap-datepicker.js"></script>
+          <script src="js/aos.js"></script>
+          <script src="js/jquery.animateNumber.min.js"></script>
+          <script src="js/main.js"></script> 
+</body>
+
+</html>

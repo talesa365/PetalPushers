@@ -9204,3 +9204,79 @@ i{
  background-image: url(../images/bloom.png);
  
 }
+/* google */
+body{
+  position: relative;
+}
+
+#google{
+  font-family: phosphate ;
+  font-size: 6rem;
+  position: absolute;
+  color: #1d2a3d;
+}
+#search{
+  margin-top: 7.25rem;
+  margin-left:25rem;
+  border-radius: 15px;
+  width: 15rem;
+  
+}
+
+#mic-icon{
+  position: absolute;
+  top:10rem;
+  margin-left: 81rem;
+}
+#search-icon{
+  position: absolute;
+  top:10rem;
+  margin-left: 83.5rem;
+  padding-top: 4px;
+}
+ul{
+ 
+  margin-top:6.5rem;
+ 
+}
+
+#settings{
+  margin-left: 18%;
+}
+.background{
+  background-image: url('../images/slice66.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:15rem;
+ 
+  
+}
+.googleForm{
+  border: 1px solid gray;
+
+  
+}
+.map{
+  height:100%;
+}
+
+#block{
+  height:.25rem;
+  width:3rem;
+  margin-top:-2.4rem;
+  margin-left:18.5%;
+  position: absolute; 
+  background-color:blue;
+}
+h6{
+  margin-left: 25%;
+}
+
+#searchBlock{
+  margin-left: 25%;
+}
+
+a{
+  color: #9933CC;
+}
+
